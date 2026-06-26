@@ -35,12 +35,12 @@
 
 .mp-chat-panel {
   position: fixed;
-  bottom: 100px;
+  bottom: 24px;
   right: 24px;
   width: 400px;
-  max-width: calc(100vw - 32px);
+  max-width: calc(100vw - 48px);
   height: 600px;
-  max-height: calc(100vh - 140px);
+  max-height: calc(100vh - 48px);
   background: #1a1a17;
   border: 1px solid #2e2d29;
   border-radius: 14px;
@@ -51,8 +51,16 @@
   font-family: "Inter", system-ui, sans-serif;
   box-shadow: 0 16px 56px rgba(0,0,0,0.65);
   color: #f5f4ee;
+  transform-origin: bottom right;
 }
-.mp-chat-panel.open { display: flex; }
+.mp-chat-panel.open {
+  display: flex;
+  animation: mp-panel-in 0.2s ease-out;
+}
+@keyframes mp-panel-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
 
 .mp-chat-header {
   padding: 16px 20px;

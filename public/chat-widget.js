@@ -213,6 +213,7 @@
 
 .mp-chat-form {
   display: flex;
+  align-items: flex-end;
   border-top: 1px solid #2e2d29;
   padding: 12px;
   gap: 8px;
@@ -225,13 +226,21 @@
   color: #f5f4ee;
   font-family: inherit;
   font-size: 14px;
+  line-height: 1.45;
   padding: 10px 14px;
   border-radius: 8px;
   outline: none;
+  resize: none;
+  min-height: 42px;
+  max-height: 160px;
+  overflow-y: auto;
   transition: border-color 0.15s;
 }
 .mp-chat-input:focus { border-color: #6dc97a; }
 .mp-chat-input::placeholder { color: #6a6862; }
+.mp-chat-input::-webkit-scrollbar { width: 6px; }
+.mp-chat-input::-webkit-scrollbar-track { background: transparent; }
+.mp-chat-input::-webkit-scrollbar-thumb { background: #2e2d29; border-radius: 3px; }
 .mp-chat-send {
   background: #6dc97a;
   color: #0e0e0c;
@@ -242,10 +251,12 @@
   font-size: 16px;
   font-weight: 700;
   min-width: 44px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.15s, transform 0.1s;
+  flex-shrink: 0;
 }
 .mp-chat-send:hover { opacity: 0.9; }
 .mp-chat-send:active { transform: scale(0.97); }
@@ -316,7 +327,7 @@
       </div>
     </div>
     <form class="mp-chat-form" id="mp-form">
-      <input class="mp-chat-input" id="mp-input" type="text" placeholder="Type a question…" autocomplete="off" maxlength="600" />
+      <textarea class="mp-chat-input" id="mp-input" placeholder="Type a question…" autocomplete="off" maxlength="600" rows="1"></textarea>
       <button class="mp-chat-send" type="submit" aria-label="Send">→</button>
     </form>
     <div class="mp-footer-hint">
@@ -432,6 +443,7 @@
     addMsg('user', content);
     history.push({ role: 'user', content });
     input.value = '';
+    autoResize();
     setSending(true);
     const loadingEl = addLoading();
 
@@ -463,6 +475,22 @@
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     send(input.value);
+  });
+
+  // Auto-resize the textarea as the user types. Caps at the CSS max-height; scrolls beyond.
+  function autoResize() {
+    input.style.height = 'auto';
+    const newHeight = Math.min(input.scrollHeight, 160);
+    input.style.height = newHeight + 'px';
+  }
+  input.addEventListener('input', autoResize);
+
+  // Enter submits, Shift+Enter inserts a newline.
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
+      e.preventDefault();
+      if (!sendBtn.disabled) form.requestSubmit();
+    }
   });
 
   // Suggestion buttons

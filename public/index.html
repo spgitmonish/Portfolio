@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Monish Sunku Prabhakar, Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content="Product executive with a 15-year track record in product-led growth and revenue strategy across fintech and AI. $75M+ in cumulative business impact. Currently Associate Director, Product at Gemini." />
+<meta name="author" content="Monish Sunku Prabhakar" />
+<link rel="canonical" href="https://monishsunkuprabhakar.com/" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Monish Sunku Prabhakar — Product Executive · Fintech + AI" />
+<meta property="og:description" content="15 years building product-led growth, revenue strategy, and the operating systems that scale them. $75M+ in cumulative business impact." />
+<meta property="og:url" content="https://monishsunkuprabhakar.com/" />
+<meta property="og:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Monish Sunku Prabhakar — Product Executive" />
+<meta name="twitter:description" content="15 years of product-led growth and operating systems. $75M+ in cumulative business impact." />
+<meta name="twitter:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+  /* ============ HERO ============ */
+  .hero { padding: 56px 56px 0; }
+  .hero .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .hero h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: clamp(72px, 14vw, 168px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    margin: 32px 0 0;
+    max-width: 11ch;
+  }
+  .hero h1 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+
+  /* ============ STATS STRIP ============ */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  .stats > div {
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule);
+  }
+  .stats > div:last-child { border-right: none; }
+  .stats .n { font-family: "Fraunces", serif; font-weight: 600; font-size: 56px; line-height: 1; letter-spacing: -0.03em; }
+  .stats .l { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); margin-top: 10px; }
+
+  /* ============ DOSSIER ============ */
+  .dossier {
+    padding: 56px 56px 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 56px;
+  }
+  .dossier .label { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .dossier p {
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    margin: 0;
+    max-width: 36ch;
+    color: var(--ink);
+  }
+  .dossier p .em { color: var(--accent); font-style: italic; }
+
+  /* ============ INDEX LIST ============ */
+  .index {
+    padding: 32px 56px 48px;
+  }
+  .index .head { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 28px; }
+
+  .row {
+    display: grid;
+    grid-template-columns: 60px 240px 1fr 240px 60px;
+    align-items: center;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    gap: 24px;
+    cursor: pointer;
+    transition: background 0.25s, padding 0.25s;
+  }
+  .row:hover {
+    background: linear-gradient(90deg, transparent, var(--bg2) 50%, transparent);
+    padding-left: 16px;
+  }
+  .row:last-child { border-bottom: 1px solid var(--rule); }
+  .row .num { font-family: "JetBrains Mono", monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .row .title { font-family: "Fraunces", serif; font-weight: 600; font-size: 28px; line-height: 1.1; letter-spacing: -0.03em; }
+  .row .co { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-top: 6px; }
+  .row .desc { font-size: 14px; color: var(--ink-soft); margin: 0; line-height: 1.5; max-width: 52ch; }
+  .row .metric-wrap { text-align: right; }
+  .row .metric { font-family: "Fraunces", serif; font-weight: 600; font-size: 44px; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
+  .row .metric-label { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-top: 6px; }
+  .row .arrow { font-size: 24px; color: var(--ink-soft); text-align: right; transition: transform 0.25s, color 0.2s; }
+  .row:hover .arrow { transform: translateX(8px); color: var(--accent); }
+
+  /* ============ ABOUT BAND ============ */
+  .about-band {
+    padding: 56px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  .about-band h2 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0 0 24px;
+  }
+  .about-band h2 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .about-band p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+    max-width: 52ch;
+  }
+  .headshot {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+    margin-bottom: 28px;
+    display: block;
+  }
+  .meta-list { display: grid; gap: 0; margin-top: 8px; }
+  .meta-list .mr {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .meta-list .mr .k { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .meta-list .mr .v { font-size: 14px; color: var(--ink); }
+  .meta-list .mr .v a { border-bottom: 1px solid var(--rule); padding-bottom: 1px; transition: border-color 0.15s, color 0.15s; }
+  .meta-list .mr .v a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ============ CONTACT BAND ============ */
+  .contact {
+    padding: 96px 56px 80px;
+    background: var(--bg2);
+    border-top: 1px solid var(--rule);
+  }
+  .contact h2 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: clamp(56px, 9vw, 132px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0;
+    max-width: 14ch;
+  }
+  .contact h2 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .contact h2 a { transition: color 0.15s; }
+  .contact h2 a:hover { color: var(--accent); }
+  .contact-foot { margin-top: 56px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .contact-foot .links { display: flex; gap: 24px; flex-wrap: wrap; font-family: "JetBrains Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; }
+  .contact-foot .links a { color: var(--ink-soft); border-bottom: 1px solid var(--rule); padding-bottom: 2px; transition: border-color 0.15s, color 0.15s; }
+  .contact-foot .links a:hover { color: var(--accent); border-color: var(--accent); }
+
+  @media (max-width: 900px) {
+    .hero { padding: 32px 20px 0; }
+    .hero h1 { font-size: clamp(56px, 13vw, 96px); margin-top: 24px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stats > div { padding: 24px 20px; }
+    .stats > div:nth-child(2) { border-right: none; }
+    .stats > div:nth-child(1), .stats > div:nth-child(2) { border-bottom: 1px solid var(--rule); }
+    .stats .n { font-size: 40px; }
+    .dossier { grid-template-columns: 1fr; padding: 32px 20px; gap: 20px; }
+    .dossier p { font-size: 22px; line-height: 1.35; max-width: none; }
+    .index { padding: 0 20px 32px; }
+    .index .head { margin-bottom: 20px; }
+    .row { grid-template-columns: 40px 1fr 90px; gap: 12px; padding: 22px 0; }
+    .row .desc, .row .co, .row .metric-label, .row .arrow { display: none; }
+    .row .title { font-size: 20px; line-height: 1.15; }
+    .row .metric { font-size: 26px; }
+    .about-band, .contact { padding: 40px 20px; grid-template-columns: 1fr; gap: 28px; }
+    .about-band h2 { font-size: 40px; }
+    .contact h2 { font-size: clamp(40px, 11vw, 72px); }
+    .meta-list .mr { grid-template-columns: 100px 1fr; padding: 12px 0; }
+    .headshot { width: 110px; height: 110px; margin-bottom: 22px; }
+    .earlier { padding: 24px 20px 32px; }
+    .earlier-grid { grid-template-columns: 1fr; gap: 16px; }
+    .earlier-card { padding: 22px; gap: 12px; }
+    .earlier-card .co-name { font-size: 28px; }
+    .contact-foot { gap: 18px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 24px 16px 0; }
+    .hero .eyebrow { font-size: 10px; }
+    .hero h1 { font-size: clamp(48px, 14vw, 72px); margin-top: 18px; max-width: 9ch; }
+    .stats > div { padding: 20px 16px; }
+    .stats .n { font-size: 32px; }
+    .stats .l { font-size: 10px; }
+    .dossier { padding: 28px 16px; gap: 16px; }
+    .dossier p { font-size: 19px; line-height: 1.4; }
+    .dossier .label { font-size: 10px; }
+    .index { padding: 0 16px 28px; }
+    .row { grid-template-columns: 32px 1fr 70px; gap: 10px; padding: 18px 0; }
+    .row .num { font-size: 11px; }
+    .row .title { font-size: 17px; }
+    .row .metric { font-size: 22px; }
+    .about-band, .contact { padding: 32px 16px; gap: 24px; }
+    .about-band h2 { font-size: 32px; line-height: 1.05; margin-bottom: 18px; }
+    .about-band p { font-size: 15px; }
+    .meta-list .mr { grid-template-columns: 90px 1fr; padding: 11px 0; }
+    .meta-list .mr .k, .meta-list .mr .v { font-size: 13px; }
+    .meta-list .mr .k { font-size: 10px; }
+    .headshot { width: 96px; height: 96px; margin-bottom: 18px; }
+    .earlier-card { padding: 20px; }
+    .earlier-card .co-name { font-size: 26px; }
+    .earlier-card .co-body { font-size: 13px; }
+    .earlier-card .co-metric .n { font-size: 30px; }
+    .contact { padding: 56px 16px 48px; }
+    .contact h2 { font-size: clamp(36px, 11vw, 56px); }
+    .contact-foot { margin-top: 36px; gap: 16px; flex-direction: column; align-items: flex-start; }
+    .contact-foot .links { gap: 18px; }
+  }
+
+  /* ============ EARLIER WORK ============ */
+  .earlier {
+    padding: 32px 56px 56px;
+    border-top: 1px solid var(--rule);
+  }
+  .earlier .head {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .earlier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .earlier-card {
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .earlier-card .co-name {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .earlier-card .co-desc {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+  .earlier-card .co-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+  }
+  .earlier-card .co-body {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .earlier-card .co-metric {
+    margin-top: auto;
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .earlier-card .co-metric .n {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+  }
+  .earlier-card .co-metric .l {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+</style>
+
+<!-- Cloudflare Web Analytics: replace token below after enabling Web Analytics in CF dashboard -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "60c9b48ace564a91b2f7d7e6f0793c27"}'></script>
+
+</head>
+<body>
+
+<header class="site-header" data-screen-label="01 Index">
+  <a class="brand" href="index.html">Monish Sunku Prabhakar</a>
+  <nav>
+    <a href="index.html" class="active">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <h1>I ship<br><span class="em">numbers</span><br>that move.</h1>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats">
+    <div>
+      <div class="n">15 yrs</div>
+      <div class="l">Building product</div>
+    </div>
+    <div>
+      <div class="n">60k+</div>
+      <div class="l">Users moved into new behavior</div>
+    </div>
+    <div>
+      <div class="n">50×</div>
+      <div class="l">Largest north-star lift shipped</div>
+    </div>
+    <div>
+      <div class="n">Fintech / AI</div>
+      <div class="l">Domain</div>
+    </div>
+  </section>
+
+  <!-- ============ DOSSIER ============ -->
+  <section class="dossier">
+    <div class="label">SECTION I, DOSSIER</div>
+    <p>Product leader who built and scaled the growth organization at Gemini, and the operating system it runs on. Contributed to <span class="em">$75M+</span> in cumulative business impact across activation, retention, and engagement. Engineering foundation, business fluency, high ownership.</p>
+  </section>
+
+  <!-- ============ INDEX LIST ============ -->
+  <section class="index">
+    <div class="head">SECTION II, SELECTED WORK · BY THE NUMBERS</div>
+
+    <a href="growth-org.html" class="row">
+      <span class="num">01</span>
+      <div>
+        <div class="title">Building the Growth Org</div>
+        <div class="co">Gemini · 2024 → ongoing</div>
+      </div>
+      <p class="desc">The work behind the work. Built the operating system, OKRs, prioritization rituals, accountability structures, then hired and coached 3 PMs into it. AI integrations and workflow automation lifted delivery velocity 50%.</p>
+      <div class="metric-wrap">
+        <div class="metric">+50%</div>
+        <div class="metric-label">Delivery velocity</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="recurring-buy.html" class="row">
+      <span class="num">02</span>
+      <div>
+        <div class="title">Recurring Buy</div>
+        <div class="co">Gemini · 2025</div>
+      </div>
+      <p class="desc">Education-first growth experience that moved 10% of monthly transacting users into autopilot investing, a 50× lift in adoption rate from a 600-user baseline.</p>
+      <div class="metric-wrap">
+        <div class="metric">33,000</div>
+        <div class="metric-label">Users on recurring buy</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="credit-card.html" class="row">
+      <span class="num">03</span>
+      <div>
+        <div class="title">Credit Card Cross-Sell</div>
+        <div class="co">Gemini · 2024</div>
+      </div>
+      <p class="desc">Solved a distribution problem, not a product problem. Placed the cross-sell at peak intent in onboarding, 30× user growth.</p>
+      <div class="metric-wrap">
+        <div class="metric">30×</div>
+        <div class="metric-label">Card user growth</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="referrals.html" class="row">
+      <span class="num">04</span>
+      <div>
+        <div class="title">Referrals</div>
+        <div class="co">Gemini · 2023 → ongoing</div>
+      </div>
+      <p class="desc">Built the foundational referral system in the trough of crypto winter, when paid acquisition stopped working. A compounding organic channel, multi-surface from exchange to credit card.</p>
+      <div class="metric-wrap">
+        <div class="metric">$35M+</div>
+        <div class="metric-label">Revenue attributed</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="experimentation-platform.html" class="row">
+      <span class="num">05</span>
+      <div>
+        <div class="title">Experimentation Platform</div>
+        <div class="co">Gemini · 2022</div>
+      </div>
+      <p class="desc">Killed a $500K Optimizely contract, a quarter of IT budget, with an API-first in-house platform that connected experiments directly to our data lake. Built with 4 people, no scope creep.</p>
+      <div class="metric-wrap">
+        <div class="metric">10×</div>
+        <div class="metric-label">Experiment velocity</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </section>
+
+  <!-- ============ EARLIER WORK ============ -->
+  <section class="earlier" id="earlier">
+    <div class="head">SECTION III, EARLIER WORK · TRAJECTORY</div>
+    <div class="earlier-grid">
+
+      <div class="earlier-card">
+        <div class="co-name">Whisper AI</div>
+        <div class="co-desc">AI hearing aid · acquired by Meta 2023</div>
+        <div class="co-meta">Director of Product · 2020–2021</div>
+        <p class="co-body">First and only PM at a 60-person startup. Stood up the entire product function from scratch and built the end-to-end testing platform that gated audio-clarity validation, accelerating the iteration loop that fed the Meta acquisition.</p>
+        <div class="co-metric"><span class="n">4×</span><span class="l">iteration speed</span></div>
+      </div>
+
+      <div class="earlier-card">
+        <div class="co-name">Ample</div>
+        <div class="co-desc">EV battery swapping · Series B/C</div>
+        <div class="co-meta">Director of Product · 2018–2020</div>
+        <p class="co-body">First product hire at a sub-10-person hardware startup. Player-coached a mechanical, electrical, and testing team and productized the computer-vision localization that put a sub-10-minute battery swap into production with 40 live Uber vehicles, fueling Series B and C.</p>
+        <div class="co-metric"><span class="n">40</span><span class="l">live Uber vehicles</span></div>
+      </div>
+
+      <div class="earlier-card">
+        <div class="co-name">Seagate</div>
+        <div class="co-desc">Hyperscale storage · $1B+ programs</div>
+        <div class="co-meta">Technical Product Lead · 2011–2018</div>
+        <p class="co-body">Started in firmware, promoted to TPL. Led a 12-person team across the US, Thailand, and Singapore, translating Google and Microsoft requirements into next-generation drive specs. Built the framework Seagate adopted as standard, awarded U.S. Patent #20170220264.</p>
+        <div class="co-metric"><span class="n">$50M</span><span class="l">/ yr client TCO saved</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about-band" id="about">
+    <div>
+      <div class="mono" style="margin-bottom: 16px;">SECTION IV, ABOUT</div>
+      <h2>Where <span class="em" style="color: var(--accent); font-style: normal; font-weight: 600;">user value</span> meets <span class="em" style="color: var(--accent); font-style: normal; font-weight: 600;">revenue</span>.</h2>
+      <p>Product leader with an engineering foundation and experience scaling teams, products, and revenue across fintech and AI businesses.</p>
+      <p>Helped scale a fintech platform from <span class="em" style="color:var(--accent);font-family:'Fraunces',serif;font-weight:600;">300K to 600K</span> MAUs while contributing to <span class="em" style="color:var(--accent);font-family:'Fraunces',serif;font-weight:600;">$75M+</span> in revenue across activation, retention, referrals, and recurring revenue initiatives. Built and led cross-functional teams across Product, Engineering, Data, Design, Marketing, and Legal, and established an experimentation-driven product culture that increased development velocity and improved decision-making across the organization.</p>
+      <p>Known for connecting product strategy to business outcomes, aligning teams around clear priorities, and building systems and processes that allow organizations to scale. Experience leading and building cross-functional product organizations, establishing product strategy, and implementing operating frameworks that enable teams to execute quickly and make better decisions.</p>
+      <p>Background includes firmware engineering at Seagate, AI infrastructure at Whisper, and product growth leadership at Gemini. Holds an MBA from UCLA Anderson with a focus on strategy, finance, and entrepreneurship.</p>
+    </div>
+    <div>
+      <img class="headshot" src="uploads/headshot.jpg" alt="Monish Sunku Prabhakar" onerror="this.style.display='none'" />
+      <div class="meta-list">
+        <div class="mr"><span class="k">Now</span><span class="v">Associate Director, Product · Growth at Gemini.</span></div>
+        <div class="mr"><span class="k">Also</span><span class="v">Consulting VP of Product · agentic AI for healthcare ops (stealth) · 2025 → present.</span></div>
+        <div class="mr"><span class="k">Open to</span><span class="v"><span style="color:var(--accent);font-weight:600;">Senior product leadership roles</span> in fintech and AI: Head of Product, GPM, Director, VP.</span></div>
+        <div class="mr"><span class="k">Domains</span><span class="v">FinTech, AI and SaaS.</span></div>
+        <div class="mr"><span class="k">Background</span><span class="v">Rare three-way fluency: <em style="color:var(--accent);font-style:normal;font-weight:600;">Product · Business · Tech</em>. I set the strategy and vision, understand the ROI, and get into execution mode.</span></div>
+        <div class="mr"><span class="k">Strengths</span><span class="v">Product Strategy · Cross-Functional Leadership · Experimentation Culture · Operating Frameworks That Scale.</span></div>
+        <div class="mr"><span class="k">Education</span><span class="v">MBA, UCLA Anderson · M.S. ECE, CU Boulder · B.E., VTU.</span></div>
+        <div class="mr"><span class="k">Recognition</span><span class="v">U.S. Patent <a href="https://patents.google.com/patent/US20170220264A1" target="_blank" rel="noopener">#20170220264</a> (Hyperscale Storage) · 2nd Place, HPE Case Competition, UCLA Anderson 2026.</span></div>
+        <div class="mr"><span class="k">Resume</span><span class="v"><a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Download PDF ↗</a></span></div>
+        <div class="mr"><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/monishsp/" target="_blank" rel="noopener">linkedin.com/in/monishsp ↗</a></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <h2>Building something <span class="em">ambitious</span>? <a href="mailto:monishsp@gmail.com">Let’s talk.</a></h2>
+    <div class="contact-foot">
+      <div class="links">
+        <a href="mailto:monishsp@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/monishsp/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <span class="mono">© MMXXVI · MONISH SUNKU PRABHAKAR · DESIGN + CODE WITH CLAUDE</span>
+    </div>
+  </section>
+</main>
+
+<!-- Portfolio chat widget (AI assistant) -->
+<script defer src="/chat-widget.js"></script>
+
+<!-- HubSpot visitor tracking -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246158735.js"></script>
+</body>
+</html>

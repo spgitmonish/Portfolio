@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Referrals, Monish SP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content="Built Gemini's foundational referral system in the trough of crypto winter. $35M+ in directly attributed revenue, multi-surface from exchange to credit card." />
+<link rel="canonical" href="https://monishsunkuprabhakar.com/referrals.html" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Referrals — Monish Sunku Prabhakar" />
+<meta property="og:description" content="Built the channel paid couldn't buy. $35M+ revenue from a compounding organic motion shipped during crypto winter." />
+<meta property="og:url" content="https://monishsunkuprabhakar.com/referrals.html" />
+<meta property="og:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Referrals — Monish Sunku Prabhakar" />
+<meta name="twitter:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .case-hero { padding: 64px 56px 48px; }
+  .case-hero .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: end; }
+  .case-hero h1 { font-family: "Fraunces", serif; font-weight: 600; font-size: clamp(64px, 11vw, 132px); line-height: 0.9; letter-spacing: -0.04em; margin: 24px 0 0; }
+  .case-hero h1 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .case-hero .move { border-left: 1px solid var(--rule); padding-left: 32px; }
+  .case-hero .move p { font-size: 16px; line-height: 1.55; color: var(--ink-soft); margin: 12px 0 0; }
+  .case-hero .move p .em { color: var(--accent); }
+
+  /* Bento */
+  .bento {
+    margin: 0 56px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 220px;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .bento .tile {
+    background: var(--bg2);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tile .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .tile .big { font-family: "Fraunces", serif; font-weight: 600; letter-spacing: -0.03em; line-height: 0.85; }
+  .tile p { font-size: 14px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+  .tile p .em { color: var(--accent); }
+
+  .tile-hero { grid-column: span 3; grid-row: span 2; padding: 40px; }
+  .tile-hero .big { font-size: 168px; color: var(--accent); }
+  .tile-hero .big sup { font-size: 64px; }
+  .tile-hero .big .plus { font-size: 80px; vertical-align: 24px; }
+  .tile-surfaces { grid-column: span 3; padding: 32px; }
+  .tile-surfaces .big { font-size: 80px; color: var(--ink); line-height: 1; }
+  .tile-surfaces .row { display: flex; gap: 12px; align-items: baseline; margin-top: 8px; }
+  .tile-surfaces .row .name { font-family: "JetBrains Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); }
+  .tile-surfaces .row .name + .name::before { content: "·"; color: var(--muted); margin-right: 12px; }
+  .tile-small { grid-column: span 1; padding: 24px; }
+  .tile-small .big { font-size: 48px; line-height: 1; color: var(--green); }
+  .tile-small .big.ink { color: var(--ink); }
+  .tile-small .sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  /* Meta strip */
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  .meta div { padding: 20px 28px; border-right: 1px solid var(--rule); }
+  .meta div:last-child { border-right: none; }
+  .meta .k { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .meta .v { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); margin-top: 6px; }
+
+  /* Narrative */
+  .narrative {
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .narrative .h { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+  .narrative .body { columns: 2; column-gap: 40px; }
+  .narrative p { font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 16px; break-inside: avoid; }
+  .narrative p .em { color: var(--accent); font-family: "Fraunces", serif; font-weight: 600; font-size: 1.05em; }
+  .narrative p strong { color: var(--ink); font-weight: 600; }
+
+  /* Pull quote */
+  .pull {
+    padding: 64px 56px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg2);
+  }
+  .pull .q {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 24ch;
+  }
+  .pull .q .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .pull .src { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-top: 28px; }
+
+  /* Phase cards */
+  .phase-wrap { padding: 0 56px 64px; }
+  .phase-wrap .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .phase {
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .phase .top { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .phase .top .ph { color: var(--accent); }
+  .phase h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 40px; line-height: 1; letter-spacing: -0.03em; color: var(--ink); margin: 0; }
+  .phase .copy { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+  .phase .lift { border-top: 1px solid var(--rule); padding-top: 16px; display: flex; align-items: baseline; gap: 12px; }
+  .phase .lift .n { font-family: "Fraunces", serif; font-weight: 600; font-size: 32px; color: var(--accent); letter-spacing: -0.03em; }
+  .phase .lift .l { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+
+  /* Latest proof — campaign spotlight */
+  .proof-wrap { padding: 0 56px 64px; }
+  .proof-wrap .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .proof-wrap .lead {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin: 14px 0 24px;
+    max-width: 22ch;
+  }
+  .proof-wrap .lead .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .proof-wrap .intro { font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 28px; max-width: 64ch; }
+  .proof-wrap .intro strong { color: var(--ink); }
+  .proof-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 24px;
+  }
+  .proof-tile {
+    background: var(--bg2);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 170px;
+  }
+  .proof-tile .pl { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .proof-tile .pn {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--accent);
+    margin-top: auto;
+  }
+  .proof-tile .ps { font-size: 13px; line-height: 1.4; color: var(--ink-soft); margin: 0; }
+
+  .compare-pill {
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+  }
+  .compare-pill .ct-head {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 0.8fr;
+    padding: 14px 24px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+  .compare-pill .ct-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 0.8fr;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .compare-pill .ct-row:last-child { border-bottom: none; }
+  .compare-pill .ct-row .metric { color: var(--ink-soft); font-size: 14px; }
+  .compare-pill .ct-row .baseline { font-family: "Fraunces", serif; font-weight: 600; font-size: 24px; color: var(--ink-soft); letter-spacing: -0.02em; }
+  .compare-pill .ct-row .after { font-family: "Fraunces", serif; font-weight: 600; font-size: 28px; color: var(--ink); letter-spacing: -0.03em; }
+  .compare-pill .ct-row .lift { font-family: "Fraunces", serif; font-weight: 600; font-size: 28px; color: var(--accent); letter-spacing: -0.03em; text-align: right; }
+
+  .proof-note {
+    margin-top: 24px;
+    padding: 18px 24px;
+    background: var(--bg2);
+    border-left: 3px solid var(--accent);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .proof-note strong { color: var(--ink); }
+
+  /* Footer next */
+  .next-case { padding: 64px 56px; border-top: 1px solid var(--rule); }
+  .next-case .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .next-case h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 80px; line-height: 1; letter-spacing: -0.04em; margin: 16px 0 0; color: var(--ink); }
+  .next-case h3 a { transition: color 0.15s; }
+  .next-case h3 a:hover { color: var(--accent); }
+  .next-case h3 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+
+  @media (max-width: 900px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 32px 20px; }
+    .case-hero h1 { font-size: clamp(48px, 12vw, 88px); margin-top: 18px; }
+    .case-hero .grid { grid-template-columns: 1fr; gap: 24px; }
+    .case-hero .move { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 20px; }
+    .bento { margin: 0 20px; grid-auto-rows: auto; grid-template-columns: 1fr 1fr; }
+    .tile-hero { grid-column: span 2; grid-row: auto; padding: 28px; }
+    .tile-hero .big { font-size: 96px; }
+    .tile-hero .big sup { font-size: 36px; }
+    .tile-hero .big .plus { font-size: 48px; vertical-align: 12px; }
+    .tile-surfaces { grid-column: span 2; padding: 24px; }
+    .tile-surfaces .big { font-size: 56px; }
+    .tile-small { grid-column: span 1; padding: 20px; }
+    .tile-small .big { font-size: 38px; }
+    .meta { grid-template-columns: 1fr 1fr; }
+    .meta div { padding: 16px 20px; border-bottom: 1px solid var(--rule); }
+    .narrative { grid-template-columns: 1fr; gap: 14px; }
+    .narrative .body { columns: 1; }
+    .narrative p { font-size: 15px; }
+    .pull .q { font-size: clamp(28px, 7vw, 44px); }
+    .phase-wrap { padding: 0 20px 40px; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .proof-wrap { padding: 0 20px 40px; }
+    .proof-wrap .lead { font-size: 28px; }
+    .proof-stat-grid { grid-template-columns: 1fr 1fr; }
+    .proof-tile { padding: 22px; min-height: 140px; }
+    .proof-tile .pn { font-size: 44px; }
+    .compare-pill .ct-head, .compare-pill .ct-row { padding: 12px 18px; grid-template-columns: 1.3fr 1fr 1fr 0.7fr; gap: 10px; }
+    .compare-pill .ct-head { font-size: 10px; }
+    .compare-pill .ct-row .metric { font-size: 13px; }
+    .compare-pill .ct-row .baseline { font-size: 20px; }
+    .compare-pill .ct-row .after { font-size: 22px; }
+    .compare-pill .ct-row .lift { font-size: 22px; }
+    .next-case h3 { font-size: 40px; }
+  }
+
+  @media (max-width: 480px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 24px 16px; }
+    .case-hero h1 { font-size: clamp(40px, 13vw, 64px); }
+    .case-hero .move p { font-size: 14px; }
+    .bento { margin: 0 16px; }
+    .tile-hero { padding: 22px; }
+    .tile-hero .big { font-size: 72px; }
+    .tile-hero .big sup { font-size: 26px; }
+    .tile-hero .big .plus { font-size: 36px; vertical-align: 8px; }
+    .tile-surfaces { padding: 20px; }
+    .tile-surfaces .big { font-size: 44px; }
+    .tile-small { padding: 16px; }
+    .tile-small .big { font-size: 28px; }
+    .tile-small .sub, .tile .lab { font-size: 10px; }
+    .meta div { padding: 14px 16px; }
+    .meta .k, .meta .v { font-size: 10px; }
+    .narrative p { font-size: 14.5px; line-height: 1.6; }
+    .pull { padding: 36px 16px; }
+    .proof-wrap { padding: 0 16px 32px; }
+    .proof-wrap .lead { font-size: 24px; }
+    .proof-tile { padding: 18px; min-height: 120px; }
+    .proof-tile .pn { font-size: 36px; }
+    .proof-tile .pl, .compare-pill .ct-head { font-size: 9px; }
+    .compare-pill .ct-row .metric { font-size: 12px; }
+    .compare-pill .ct-row .baseline { font-size: 17px; }
+    .compare-pill .ct-row .after { font-size: 19px; }
+    .compare-pill .ct-row .lift { font-size: 19px; }
+    .next-case h3 { font-size: 32px; }
+  }
+</style>
+
+<!-- Cloudflare Web Analytics: replace token below after enabling Web Analytics in CF dashboard -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "60c9b48ace564a91b2f7d7e6f0793c27"}'></script>
+
+</head>
+<body>
+
+<header class="site-header" data-screen-label="05 Referrals">
+  <a class="brand" href="index.html">Monish Sunku Prabhakar</a>
+  <nav>
+    <a href="index.html">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+  </nav>
+  <div class="clock"><a href="index.html">← INDEX</a></div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="mono">CASE 04, REFERRALS · GEMINI · 2023 → ONGOING</div>
+    <div class="grid">
+      <h1>The channel<br>paid <span class="em">couldn’t</span><br>buy.</h1>
+      <div class="move">
+        <div class="mono">THE MOVE</div>
+        <p>In the depth of crypto winter, paid acquisition stopped working. I bet that growth wasn’t a budget problem, it was a <span class="em">channel</span> problem, and built the foundational referral system Gemini still runs on today.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO -->
+  <section class="bento">
+    <div class="tile tile-hero">
+      <div class="lab">RESULT · DIRECT REVENUE ATTRIBUTION</div>
+      <div>
+        <div class="big">$35M<span class="plus">+</span></div>
+        <p style="margin-top:12px;">In direct revenue attribution since inception. A compounding channel built when the rest of the industry was cutting acquisition spend. <span class="em">Organic by design.</span></p>
+      </div>
+    </div>
+    <div class="tile tile-surfaces">
+      <div class="lab">SURFACES · MULTI-PRODUCT</div>
+      <div>
+        <div class="big">2</div>
+        <div class="row"><span class="name">Exchange</span><span class="name">Credit Card</span></div>
+        <p style="margin-top:10px;">Refer on either surface, earn when the referee transacts or is approved.</p>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">REWARD</div>
+      <div>
+        <div class="big">$50</div>
+        <div class="sub">per qualified referral</div>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">LAUNCH</div>
+      <div>
+        <div class="big ink">2023</div>
+        <div class="sub">v1, foundational</div>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">STATUS</div>
+      <div>
+        <div class="big ink">LIVE</div>
+        <div class="sub">evolving with the market</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- META -->
+  <section class="meta">
+    <div><div class="k">ROLE</div><div class="v">ASSOC. DIRECTOR, GROWTH</div></div>
+    <div><div class="k">TEAM</div><div class="v">PM · DESIGN · ENG · DATA · LEGAL · MKTG</div></div>
+    <div><div class="k">DURATION</div><div class="v">Q4 ’23 → ONGOING</div></div>
+    <div><div class="k">NORTH STAR</div><div class="v">ORGANIC ACQUISITION → REVENUE</div></div>
+    <div><div class="k">STATUS</div><div class="v">SHIPPED · COMPOUNDING</div></div>
+  </section>
+
+  <!-- THE GAP -->
+  <section class="narrative">
+    <div class="h">THE GAP</div>
+    <div class="body">
+      <p>Late 2023 was the trough of <strong>crypto winter</strong>. Trading volumes had collapsed, exchange revenue with them, and across the industry every growth team I knew had its paid budget cut to the bone.</p>
+      <p>Gemini’s acquisition mix was overweighted on paid. CPMs kept rising while ROAS kept falling. Inside that math, the answer wasn’t to spend smarter, it was to <span class="em">build a channel that didn’t depend on spend</span>.</p>
+      <p>What was missing was unmistakable: every healthy consumer fintech had an organic acquisition motion that paid for itself. We didn’t. So I proposed building one.</p>
+    </div>
+  </section>
+
+  <!-- PULL -->
+  <section class="pull">
+    <div class="q">“In a winter market, you don’t <span class="em" style="white-space:nowrap;">out-bid</span>.<br>You <span class="em" style="white-space:nowrap;">out-build</span>.”</div>
+    <div class="src">, INTERNAL MEMO, Q4 2023</div>
+  </section>
+
+  <!-- THE BET -->
+  <section class="narrative">
+    <div class="h">THE BET</div>
+    <div class="body">
+      <p>The thesis was simple: every existing user is a latent distribution channel. In a market where you can’t outbid Meta or Google, the cheapest user is the one your users <span class="em">bring you</span>.</p>
+      <p>I framed referrals as <strong>performance-based CAC paid to users</strong>, not a marketing campaign. The economics had to be ROI-positive on a per-referral basis from day one. No incentive paid out unless the referred user generated real, qualified revenue: a funded trade or an approved card.</p>
+      <p>And it had to be infrastructure, not a one-off promotion. A foundational system Gemini could compound on for years, across whatever surfaces we launched next.</p>
+    </div>
+  </section>
+
+  <!-- PHASES -->
+  <section class="phase-wrap">
+    <div class="lab">EVOLUTION · A SYSTEM, NOT A FEATURE</div>
+    <div class="phase-grid">
+      <div class="phase">
+        <div class="top"><span class="ph">V1 · Q4 ’23</span><span>Foundational</span></div>
+        <h3>Exchange</h3>
+        <p class="copy">Built the foundational referral system on the core exchange surface. $50 reward, paid only when the referee completed a qualifying trade. Tracking, attribution, payouts, and abuse controls all designed once, designed to last.</p>
+        <div class="lift"><span class="n">v1</span><span class="l">channel created</span></div>
+      </div>
+      <div class="phase">
+        <div class="top"><span class="ph">V2</span><span>Multi-surface</span></div>
+        <h3>Credit Card</h3>
+        <p class="copy">Extended the system to the credit card surface. Same $50, same referrer, new qualifying event: an approved card. Reused the v1 plumbing rather than rebuilding, which is what made the multi-surface story possible at all.</p>
+        <div class="lift"><span class="n">2×</span><span class="l">qualifying surfaces</span></div>
+      </div>
+      <div class="phase">
+        <div class="top"><span class="ph">ONGOING</span><span>Live</span></div>
+        <h3>Tuning</h3>
+        <p class="copy">Reward economics, eligibility windows, and abuse controls re-tuned as market dynamics shift. Paid acquisition appetite returns and recedes; the referral channel keeps compounding underneath.</p>
+        <div class="lift"><span class="n">$35M+</span><span class="l">attributed to date</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST PROOF · $75 LTO -->
+  <section class="proof-wrap">
+    <div class="lab">LATEST PROOF · $75 LIMITED-TIME OFFER · 30 DAYS</div>
+    <h2 class="lead">A 30-day campaign on rails built in <span class="em">2023</span>.</h2>
+    <p class="intro">We tested an elevated <strong>$75 flat payout</strong> as a limited-time offer to see how the foundational system would respond to a sharper incentive. In under a month, the offer drove:</p>
+
+    <div class="proof-stat-grid">
+      <div class="proof-tile">
+        <div class="pl">New accounts</div>
+        <div class="pn">13,580</div>
+        <p class="ps">~522/day, in under 30 days</p>
+      </div>
+      <div class="proof-tile">
+        <div class="pl">Unique referrers</div>
+        <div class="pn">4,619</div>
+        <p class="ps">~3 referrals per referrer, on average</p>
+      </div>
+      <div class="proof-tile">
+        <div class="pl">First-time trades</div>
+        <div class="pn">7,850</div>
+        <p class="ps">FTTs from the new account cohort</p>
+      </div>
+      <div class="proof-tile">
+        <div class="pl">Qualified for bonus</div>
+        <div class="pn">6,675</div>
+        <p class="ps">~302/day · traded $100+ to qualify</p>
+      </div>
+    </div>
+
+    <div class="compare-pill">
+      <div class="ct-head">
+        <div>Daily rate</div>
+        <div>2024 baseline</div>
+        <div>$75 LTO (30 days)</div>
+        <div style="text-align:right;">Lift</div>
+      </div>
+      <div class="ct-row">
+        <div class="metric">New accounts / day</div>
+        <div class="baseline">33</div>
+        <div class="after">522</div>
+        <div class="lift">16&times;</div>
+      </div>
+      <div class="ct-row">
+        <div class="metric">Qualified FTTs / day</div>
+        <div class="baseline">11</div>
+        <div class="after">302</div>
+        <div class="lift">27&times;</div>
+      </div>
+      <div class="ct-row">
+        <div class="metric">Qualification rate</div>
+        <div class="baseline">25%</div>
+        <div class="after">49.2%</div>
+        <div class="lift">~2&times;</div>
+      </div>
+    </div>
+
+    <div class="proof-note">
+      <strong>These numbers are still moving.</strong> Referred users have a 30-day window to complete the trading requirement and qualify for payout, so the qualified count keeps rising past the offer end. We&rsquo;re tracking revenue cohort-over-cohort to confirm profitability before testing further high-value offers. The standard reward transitions back to <strong>$50</strong>, still the best flat payout referral in the industry.
+    </div>
+  </section>
+
+  <!-- THE OUTCOME -->
+  <section class="narrative">
+    <div class="h">THE OUTCOME</div>
+    <div class="body">
+      <p>Direct revenue attribution from the referral program has been in the <span class="em">$35–40M</span> range since inception, and it is still being added to every month. By construction, every dollar of that is paid for by real qualifying activity, not speculative spend.</p>
+      <p>The bigger win was structural. We came out of crypto winter with a permanent organic channel sitting alongside paid, sized large enough to matter, and architected to extend to whatever surface Gemini launches next. The credit card extension was the proof: the system was infrastructure, not a campaign.</p>
+      <p>The program continues to evolve with the market. The bones I built in Q4 2023 are still what it stands on.</p>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <section class="next-case">
+    <div class="lab">NEXT</div>
+    <h3><a href="experimentation-platform.html">Experimentation<br><span class="em">Platform →</span></a></h3>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <a href="index.html">© MMXXVI · Monish Sunku Prabhakar</a>
+  <span>
+    <a href="https://www.linkedin.com/in/monishsp/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    &nbsp;·&nbsp;
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:monishsp@gmail.com">Email</a>
+  </span>
+  <span>Design + Code with Claude</span>
+</footer>
+
+<!-- Portfolio chat widget (AI assistant) -->
+<script defer src="/chat-widget.js"></script>
+
+<!-- HubSpot visitor tracking -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246158735.js"></script>
+</body>
+</html>

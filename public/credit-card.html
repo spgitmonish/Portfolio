@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Credit Card Cross-Sell, Monish SP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content="30× user growth on Gemini's credit card by moving the cross-sell to peak intent in onboarding. A distribution problem solved." />
+<link rel="canonical" href="https://monishsunkuprabhakar.com/credit-card.html" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Credit Card Cross-Sell — Monish Sunku Prabhakar" />
+<meta property="og:description" content="Strong product, weak distribution. Moved the cross-sell to peak intent. 1,000 to 30,000 card holders." />
+<meta property="og:url" content="https://monishsunkuprabhakar.com/credit-card.html" />
+<meta property="og:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Credit Card Cross-Sell — Monish Sunku Prabhakar" />
+<meta name="twitter:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .case-hero { padding: 64px 56px 48px; }
+  .case-hero .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: end; }
+  .case-hero h1 { font-family: "Fraunces", serif; font-weight: 600; font-size: clamp(56px, 10vw, 124px); line-height: 0.92; letter-spacing: -0.04em; margin: 24px 0 0; }
+  .case-hero h1 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .case-hero .move { border-left: 1px solid var(--rule); padding-left: 32px; }
+  .case-hero .move p { font-size: 16px; line-height: 1.55; color: var(--ink-soft); margin: 12px 0 0; }
+  .case-hero .move p .em { color: var(--accent); }
+
+  /* Bento */
+  .bento {
+    margin: 0 56px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 220px;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .bento .tile {
+    background: var(--bg2);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tile .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .tile .big { font-family: "Fraunces", serif; font-weight: 600; letter-spacing: -0.03em; line-height: 0.85; }
+  .tile p { font-size: 14px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+  .tile p .em { color: var(--accent); }
+
+  .tile-hero { grid-column: span 4; grid-row: span 2; padding: 40px; }
+  .tile-hero .big { font-size: 220px; color: var(--accent); }
+  .tile-arrow { grid-column: span 2; grid-row: span 2; padding: 32px; align-items: center; justify-content: center; gap: 24px; }
+  .tile-arrow .from { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .tile-arrow .num { font-family: "Fraunces", serif; font-weight: 600; font-size: 56px; letter-spacing: -0.03em; line-height: 1; }
+  .tile-arrow .num.before { color: var(--ink-soft); }
+  .tile-arrow .num.after { color: var(--accent); }
+  .tile-arrow .arr { font-size: 32px; color: var(--muted); margin: 12px 0; }
+
+  /* Meta strip */
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  .meta div { padding: 20px 28px; border-right: 1px solid var(--rule); }
+  .meta div:last-child { border-right: none; }
+  .meta .k { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .meta .v { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); margin-top: 6px; }
+
+  /* Narrative */
+  .narrative {
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .narrative .h { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+  .narrative .body { columns: 2; column-gap: 40px; }
+  .narrative p { font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 16px; break-inside: avoid; }
+  .narrative p .em { color: var(--accent); font-family: "Fraunces", serif; font-weight: 600; font-size: 1.05em; }
+  .narrative p strong { color: var(--ink); font-weight: 600; }
+
+  /* Pull quote */
+  .pull {
+    padding: 64px 56px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg2);
+  }
+  .pull .q { font-family: "Fraunces", serif; font-weight: 600; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.03em; color: var(--ink); max-width: 26ch; }
+  .pull .q .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .pull .src { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-top: 28px; }
+
+  /* Funnel diagram */
+  .funnel-wrap { padding: 0 56px 64px; }
+  .funnel-wrap .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 24px; }
+  .funnel { background: var(--bg2); border: 1px solid var(--rule); padding: 32px; }
+  .funnel-stages { display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr 40px 1fr 40px 1fr; align-items: stretch; gap: 0; }
+  .stage { padding: 20px; border: 1px solid var(--rule); display: flex; flex-direction: column; gap: 8px; min-height: 110px; justify-content: space-between; }
+  .stage.hot { border-color: var(--accent); background: rgba(109, 201, 122, 0.06); }
+  .stage .name { font-family: "Fraunces", serif; font-weight: 600; font-size: 22px; line-height: 1; letter-spacing: -0.03em; color: var(--ink); }
+  .stage .sub { font-family: "JetBrains Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .stage .intent { font-family: "JetBrains Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); }
+  .stage.hot .intent { color: var(--accent); }
+  .arrow-step { font-size: 20px; color: var(--muted); display: flex; align-items: center; justify-content: center; }
+  .funnel-foot { display: flex; justify-content: space-between; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--rule); font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .funnel-foot .anchor { color: var(--accent); }
+
+  /* Footer next */
+  .next-case { padding: 64px 56px; border-top: 1px solid var(--rule); }
+  .next-case .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .next-case h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 64px; line-height: 1; letter-spacing: -0.04em; margin: 16px 0 0; color: var(--ink); }
+  .next-case h3 a { transition: color 0.15s; }
+  .next-case h3 a:hover { color: var(--accent); }
+
+  @media (max-width: 480px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 24px 16px; }
+    .case-hero h1 { font-size: clamp(40px, 13vw, 64px); }
+    .case-hero .move p { font-size: 14px; }
+    .bento { margin: 0 16px; }
+    .tile-hero { padding: 22px; }
+    .tile-hero .big { font-size: 84px; }
+    .tile-arrow { padding: 20px; }
+    .meta div { padding: 14px 16px; }
+    .meta .k, .meta .v { font-size: 10px; }
+    .narrative p { font-size: 14.5px; line-height: 1.6; }
+    .pull { padding: 36px 16px; }
+    .next-case h3 { font-size: 32px; }
+  }
+
+  @media (max-width: 900px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 32px 20px; }
+    .case-hero .grid { grid-template-columns: 1fr; gap: 24px; }
+    .bento { margin: 0 20px; grid-auto-rows: auto; grid-template-columns: 1fr; }
+    .tile-hero, .tile-arrow { grid-column: span 1; grid-row: auto; }
+    .tile-hero .big { font-size: 120px; }
+    .meta { grid-template-columns: 1fr 1fr; }
+    .meta div { border-bottom: 1px solid var(--rule); }
+    .narrative { grid-template-columns: 1fr; gap: 16px; }
+    .narrative .body { columns: 1; }
+    .funnel-wrap { padding: 0 20px 40px; }
+    .funnel-stages { grid-template-columns: 1fr; gap: 8px; }
+    .arrow-step { transform: rotate(90deg); }
+  }
+</style>
+
+<!-- Cloudflare Web Analytics: replace token below after enabling Web Analytics in CF dashboard -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "60c9b48ace564a91b2f7d7e6f0793c27"}'></script>
+
+</head>
+<body>
+
+<header class="site-header" data-screen-label="04 Credit Card">
+  <a class="brand" href="index.html">Monish Sunku Prabhakar</a>
+  <nav>
+    <a href="index.html">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+  </nav>
+  <div class="clock"><a href="index.html">← INDEX</a></div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="mono">CASE 03, CREDIT CARD CROSS-SELL · GEMINI · 2024</div>
+    <div class="grid">
+      <h1><span class="em">1,000</span> users<br>to <span class="em">30,000</span>.</h1>
+      <div class="move">
+        <div class="mono">THE MOVE</div>
+        <p>Strong product, weak distribution. I moved the cross-sell to <span class="em">peak intent</span>: the final step of onboarding, after a user had already committed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO -->
+  <section class="bento">
+    <div class="tile tile-hero">
+      <div class="lab">RESULT · USER GROWTH</div>
+      <div>
+        <div class="big">30×</div>
+        <p style="margin-top:12px;">Credit card holders, post-launch. From a base of ~1,000 users to 30,000 in the new cross-sell flow. <span class="em">A distribution problem, solved.</span></p>
+      </div>
+    </div>
+    <div class="tile tile-arrow">
+      <div class="from">BEFORE</div>
+      <div class="num before">1,000</div>
+      <div class="arr">↓</div>
+      <div class="num after">30,000</div>
+      <div class="from">AFTER</div>
+    </div>
+  </section>
+
+  <!-- META -->
+  <section class="meta">
+    <div><div class="k">ROLE</div><div class="v">ASSOC. DIRECTOR, GROWTH</div></div>
+    <div><div class="k">TEAM</div><div class="v">1 PM · 1 DESIGN · 4 ENG · 1 DATA</div></div>
+    <div><div class="k">DURATION</div><div class="v">2024</div></div>
+    <div><div class="k">NORTH STAR</div><div class="v">CARD ATTACH RATE → MTU</div></div>
+    <div><div class="k">STATUS</div><div class="v">SHIPPED · ITERATING</div></div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="narrative">
+    <div class="h">THE PROBLEM</div>
+    <div class="body">
+      <p>Gemini’s crypto rewards credit card was a strong product on paper: real cashback, clear retention value, a natural fit for the existing user base. It was also invisible. Roughly <span class="em">1,000</span> users had it.</p>
+      <p>The card lived outside the core trading experience. The cross-sell, when it ran, fired in the middle of a session, when the user’s mind was on a trade and the card looked like a distraction. <strong>This was not a product problem. It was a distribution and timing problem.</strong></p>
+    </div>
+  </section>
+
+  <!-- PULL -->
+  <section class="pull">
+    <div class="q">“The card wasn’t failing on its merits.<br>It was failing on its <span class="em">moment</span>.”</div>
+    <div class="src">, STRATEGY MEMO, WEEK ONE</div>
+  </section>
+
+  <!-- THE BET -->
+  <section class="narrative">
+    <div class="h">THE BET</div>
+    <div class="body">
+      <p>The thesis: a user who had just completed identity verification and funded their account had crossed the highest-friction barrier on the platform. They had demonstrated commitment. They had also just experienced the full weight of <span class="em">setup work</span>, and were maximally receptive to additional value.</p>
+      <p>Move the cross-sell from mid-session to the final step of onboarding. Find peak intent. Test relentlessly into placement, framing, and conversion mechanics until we found the variant that compounded.</p>
+    </div>
+  </section>
+
+  <!-- FUNNEL -->
+  <section class="funnel-wrap">
+    <div class="lab">PLACEMENT, WHERE INTENT IS HIGHEST</div>
+    <div class="funnel">
+      <div class="funnel-stages">
+        <div class="stage">
+          <div class="sub">Step 1</div>
+          <div class="name">Sign up</div>
+          <div class="intent">low intent</div>
+        </div>
+        <div class="arrow-step">→</div>
+        <div class="stage">
+          <div class="sub">Step 2</div>
+          <div class="name">Identity</div>
+          <div class="intent">rising</div>
+        </div>
+        <div class="arrow-step">→</div>
+        <div class="stage">
+          <div class="sub">Step 3</div>
+          <div class="name">Fund account</div>
+          <div class="intent">committed</div>
+        </div>
+        <div class="arrow-step">→</div>
+        <div class="stage hot">
+          <div class="sub">Step 4 ★</div>
+          <div class="name">Cross-sell</div>
+          <div class="intent">peak intent</div>
+        </div>
+        <div class="arrow-step">→</div>
+        <div class="stage">
+          <div class="sub">Step 5</div>
+          <div class="name">First trade</div>
+          <div class="intent">activated</div>
+        </div>
+      </div>
+      <div class="funnel-foot">
+        <span>// the right offer at the right moment</span>
+        <span class="anchor">↑ ANCHOR POINT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE EXPERIMENT -->
+  <section class="narrative">
+    <div class="h">THE EXPERIMENT</div>
+    <div class="body">
+      <p>I owned the cross-sell strategy and stayed hands-on with the experience. We ran <span class="em">A/B/n</span> across three axes: placement (mid-session vs. end-of-onboarding), framing (rewards-first vs. utility-first vs. portfolio-first), and conversion mechanics (single-tap apply vs. educational lead-in).</p>
+      <p>The winning variant: end-of-onboarding placement, rewards-first framing, single-tap apply with a lightweight rewards calculator inline. Anything that read like an interruption lost. Anything that read like <strong>a finishing gift</strong> won.</p>
+    </div>
+  </section>
+
+  <!-- THE OUTCOME -->
+  <section class="narrative">
+    <div class="h">THE OUTCOME</div>
+    <div class="body">
+      <p>Card holders grew from <span class="em">~1,000</span> to <span class="em">~30,000</span>, a 30× lift. The qualitative win was bigger than the quantitative one: card holders became more engaged platform users overall, lifting MTU and contributing to the broader north-star.</p>
+      <p>Strategically, this rewrote the role of onboarding. It stopped being a one-time setup task and became a <strong>multi-product adoption moment</strong>. That framing now anchors how we think about every new product Gemini launches into the existing user base.</p>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <section class="next-case">
+    <div class="lab">NEXT</div>
+    <h3><a href="referrals.html">Referrals →</a></h3>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <a href="index.html">© MMXXVI · Monish Sunku Prabhakar</a>
+  <span>
+    <a href="https://www.linkedin.com/in/monishsp/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    &nbsp;·&nbsp;
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:monishsp@gmail.com">Email</a>
+  </span>
+  <span>Design + Code with Claude</span>
+</footer>
+
+<!-- Portfolio chat widget (AI assistant) -->
+<script defer src="/chat-widget.js"></script>
+
+<!-- HubSpot visitor tracking -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246158735.js"></script>
+</body>
+</html>

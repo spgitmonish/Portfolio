@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Experimentation Platform, Monish SP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content="Killed a $500K Optimizely contract with an in-house API-first platform that connected experiments to Snowflake. 10× experiment velocity with 4 people." />
+<link rel="canonical" href="https://monishsunkuprabhakar.com/experimentation-platform.html" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Experimentation Platform — Monish Sunku Prabhakar" />
+<meta property="og:description" content="Killed a $500K vendor. Built it better. API-first in-house platform connecting experiments to Snowflake. 10× velocity." />
+<meta property="og:url" content="https://monishsunkuprabhakar.com/experimentation-platform.html" />
+<meta property="og:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Experimentation Platform — Monish Sunku Prabhakar" />
+<meta name="twitter:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .case-hero { padding: 64px 56px 48px; }
+  .case-hero .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: end; }
+  .case-hero h1 { font-family: "Fraunces", serif; font-weight: 600; font-size: clamp(64px, 11vw, 132px); line-height: 0.9; letter-spacing: -0.04em; margin: 24px 0 0; }
+  .case-hero h1 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .case-hero .move { border-left: 1px solid var(--rule); padding-left: 32px; }
+  .case-hero .move p { font-size: 16px; line-height: 1.55; color: var(--ink-soft); margin: 12px 0 0; }
+  .case-hero .move p .em { color: var(--accent); }
+
+  /* Bento */
+  .bento {
+    margin: 0 56px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 220px;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .bento .tile {
+    background: var(--bg2);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tile .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .tile .big { font-family: "Fraunces", serif; font-weight: 600; letter-spacing: -0.03em; line-height: 0.85; }
+  .tile p { font-size: 14px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+  .tile p .em { color: var(--accent); }
+
+  .tile-hero { grid-column: span 3; grid-row: span 2; padding: 40px; }
+  .tile-hero .big { font-size: 220px; color: var(--accent); }
+  .tile-hero .big .x { font-size: 140px; vertical-align: 28px; margin-left: 8px; font-weight: 500; }
+  .tile-budget { grid-column: span 3; padding: 32px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  .tile-budget .lab { margin-bottom: 6px; }
+  .tile-budget .row { display: flex; align-items: baseline; gap: 16px; }
+  .tile-budget .from { font-family: "Fraunces", serif; font-weight: 600; font-size: 64px; line-height: 1; letter-spacing: -0.03em; color: var(--red); text-decoration: line-through; text-decoration-thickness: 3px; }
+  .tile-budget .arr { font-family: "JetBrains Mono", monospace; font-size: 24px; color: var(--muted); }
+  .tile-budget .to { font-family: "Fraunces", serif; font-weight: 600; font-size: 64px; line-height: 1; letter-spacing: -0.03em; color: var(--green); }
+  .tile-budget .legend { display: flex; gap: 20px; font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-top: 4px; }
+  .tile-small { grid-column: span 1; padding: 24px; }
+  .tile-small .big { font-size: 56px; line-height: 1; color: var(--ink); }
+  .tile-small .big.green { color: var(--green); }
+  .tile-small .sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  /* Meta strip */
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  .meta div { padding: 20px 28px; border-right: 1px solid var(--rule); }
+  .meta div:last-child { border-right: none; }
+  .meta .k { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .meta .v { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); margin-top: 6px; }
+
+  /* Narrative */
+  .narrative {
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .narrative .h { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+  .narrative .body { columns: 2; column-gap: 40px; }
+  .narrative p { font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 16px; break-inside: avoid; }
+  .narrative p .em { color: var(--accent); font-family: "Fraunces", serif; font-weight: 600; font-size: 1.05em; }
+  .narrative p strong { color: var(--ink); font-weight: 600; }
+
+  /* Pull quote */
+  .pull {
+    padding: 64px 56px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg2);
+  }
+  .pull .q {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 26ch;
+  }
+  .pull .q .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .pull .src { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-top: 28px; }
+
+  /* Compare block (build vs buy) */
+  .compare-wrap { padding: 0 56px 64px; }
+  .compare-wrap .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 24px;
+    border: 1px solid var(--rule);
+    background: var(--bg2);
+  }
+  .compare .col { padding: 32px; }
+  .compare .col + .col { border-left: 1px solid var(--rule); }
+  .compare .col .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+  .compare .col .name { font-family: "Fraunces", serif; font-weight: 600; font-size: 32px; letter-spacing: -0.03em; color: var(--ink); }
+  .compare .col.win .name { color: var(--accent); }
+  .compare .col .price { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .compare ul { list-style: none; padding: 0; margin: 0; }
+  .compare li { font-size: 14px; line-height: 1.55; color: var(--ink-soft); padding: 10px 0; border-bottom: 1px solid var(--rule); display: flex; gap: 10px; }
+  .compare li:last-child { border-bottom: none; }
+  .compare li::before { content: "−"; color: var(--muted); flex-shrink: 0; }
+  .compare .col.win li::before { content: "+"; color: var(--accent); }
+
+  /* Phase cards */
+  .phase-wrap { padding: 0 56px 64px; }
+  .phase-wrap .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .phase {
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .phase .top { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .phase .top .ph { color: var(--accent); }
+  .phase h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 40px; line-height: 1; letter-spacing: -0.03em; color: var(--ink); margin: 0; }
+  .phase .copy { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+  .phase .lift { border-top: 1px solid var(--rule); padding-top: 16px; display: flex; align-items: baseline; gap: 12px; }
+  .phase .lift .n { font-family: "Fraunces", serif; font-weight: 600; font-size: 32px; color: var(--accent); letter-spacing: -0.03em; }
+  .phase .lift .l { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+
+  /* Footer next */
+  .next-case { padding: 64px 56px; border-top: 1px solid var(--rule); }
+  .next-case .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .next-case h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 80px; line-height: 1; letter-spacing: -0.04em; margin: 16px 0 0; color: var(--ink); }
+  .next-case h3 a { transition: color 0.15s; }
+  .next-case h3 a:hover { color: var(--accent); }
+  .next-case h3 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+
+  @media (max-width: 900px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 32px 20px; }
+    .case-hero h1 { font-size: clamp(48px, 12vw, 88px); margin-top: 18px; }
+    .case-hero .grid { grid-template-columns: 1fr; gap: 24px; }
+    .case-hero .move { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 20px; }
+    .bento { margin: 0 20px; grid-auto-rows: auto; grid-template-columns: 1fr 1fr; }
+    .tile-hero { grid-column: span 2; grid-row: auto; padding: 28px; }
+    .tile-hero .big { font-size: 140px; }
+    .tile-hero .big .x { font-size: 88px; vertical-align: 18px; margin-left: 6px; }
+    .tile-budget { grid-column: span 2; padding: 24px; }
+    .tile-budget .from, .tile-budget .to { font-size: 44px; }
+    .tile-small { grid-column: span 1; padding: 20px; }
+    .tile-small .big { font-size: 38px; }
+    .meta { grid-template-columns: 1fr 1fr; }
+    .meta div { padding: 16px 20px; border-bottom: 1px solid var(--rule); }
+    .narrative { grid-template-columns: 1fr; gap: 14px; }
+    .narrative .body { columns: 1; }
+    .narrative p { font-size: 15px; }
+    .pull .q { font-size: clamp(28px, 7vw, 44px); }
+    .compare-wrap, .phase-wrap { padding: 0 20px 40px; }
+    .compare { grid-template-columns: 1fr; }
+    .compare .col + .col { border-left: none; border-top: 1px solid var(--rule); }
+    .compare .col { padding: 24px; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .next-case h3 { font-size: 40px; }
+  }
+
+  @media (max-width: 480px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 24px 16px; }
+    .case-hero h1 { font-size: clamp(40px, 13vw, 64px); }
+    .case-hero .move p { font-size: 14px; }
+    .bento { margin: 0 16px; }
+    .tile-hero { padding: 22px; }
+    .tile-hero .big { font-size: 96px; }
+    .tile-hero .big .x { font-size: 60px; vertical-align: 12px; }
+    .tile-budget { padding: 20px; }
+    .tile-budget .from, .tile-budget .to { font-size: 34px; }
+    .tile-small { padding: 16px; }
+    .tile-small .big { font-size: 28px; }
+    .tile-small .sub, .tile .lab { font-size: 10px; }
+    .meta div { padding: 14px 16px; }
+    .meta .k, .meta .v { font-size: 10px; }
+    .narrative p { font-size: 14.5px; line-height: 1.6; }
+    .pull { padding: 36px 16px; }
+    .compare-wrap, .phase-wrap { padding: 0 16px 36px; }
+    .compare .col { padding: 20px; }
+    .compare .col .name { font-size: 26px; }
+    .compare li { font-size: 13px; }
+    .next-case h3 { font-size: 32px; }
+  }
+</style>
+
+<!-- Cloudflare Web Analytics: replace token below after enabling Web Analytics in CF dashboard -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "60c9b48ace564a91b2f7d7e6f0793c27"}'></script>
+
+</head>
+<body>
+
+<header class="site-header" data-screen-label="06 Experimentation">
+  <a class="brand" href="index.html">Monish Sunku Prabhakar</a>
+  <nav>
+    <a href="index.html">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+  </nav>
+  <div class="clock"><a href="index.html">← INDEX</a></div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="mono">CASE 05, EXPERIMENTATION PLATFORM · GEMINI · 2022</div>
+    <div class="grid">
+      <h1>Killed a <span class="em">$500K</span><br>vendor.<br>Built it <span class="em">better</span>.</h1>
+      <div class="move">
+        <div class="mono">THE MOVE</div>
+        <p>Replaced Optimizely, a quarter of total IT budget, with an in-house, API-first platform that did what the vendor <span class="em">couldn’t</span>: connect experiments directly to our data lake.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO -->
+  <section class="bento">
+    <div class="tile tile-hero">
+      <div class="lab">RESULT · EXPERIMENT VELOCITY</div>
+      <div>
+        <div class="big">10<span class="x">×</span></div>
+        <p style="margin-top:12px;">From <span class="em">1–2</span> experiments per month to <span class="em">tens</span> per month, post-launch. The compounding flywheel of a self-service platform built right.</p>
+      </div>
+    </div>
+    <div class="tile tile-budget">
+      <div class="lab">BUDGET · ANNUAL RUN-RATE</div>
+      <div class="row">
+        <span class="from">$500K</span>
+        <span class="arr">→</span>
+        <span class="to">infra only</span>
+      </div>
+      <div class="legend"><span>OPTIMIZELY</span><span>IN-HOUSE</span></div>
+      <p style="margin-top:6px;">A quarter of total IT budget reclaimed. Platform pays for itself on maintenance and infra alone.</p>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">TEAM</div>
+      <div>
+        <div class="big">4</div>
+        <div class="sub">people, lead PM</div>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">API DOMAINS</div>
+      <div>
+        <div class="big">4</div>
+        <div class="sub">features · experiments · attributes · audiences</div>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">UPTIME</div>
+      <div>
+        <div class="big green">≥</div>
+        <div class="sub">matched the vendor</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- META -->
+  <section class="meta">
+    <div><div class="k">ROLE</div><div class="v">LEAD PM</div></div>
+    <div><div class="k">TEAM</div><div class="v">1 LEAD PM · 3 ENG</div></div>
+    <div><div class="k">DURATION</div><div class="v">2022 · PRE-AI ERA</div></div>
+    <div><div class="k">NORTH STAR</div><div class="v">EXPERIMENT VELOCITY</div></div>
+    <div><div class="k">STATUS</div><div class="v">SHIPPED · SELF-FUNDING</div></div>
+  </section>
+
+  <!-- THE GAP -->
+  <section class="narrative">
+    <div class="h">THE GAP</div>
+    <div class="body">
+      <p>Gemini was paying Optimizely roughly <span class="em">$500K</span> a year, about <strong>a quarter of total IT budget</strong>, for a platform doing the basics of experimentation: feature flags, A/B splits, a UI to spin up tests.</p>
+      <p>The fatal limitation wasn’t price. It was that the vendor lived outside our data perimeter. Exposure events couldn’t join cleanly to our Snowflake tables. Real impact analysis, the part that turns experiments into compounding learning, was effectively out of reach.</p>
+      <p>So we were paying premium price for the <em>cheapest</em> half of the value: running tests. The expensive half, <span class="em">understanding</span> them, was on us to build anyway.</p>
+    </div>
+  </section>
+
+  <!-- PULL -->
+  <section class="pull">
+    <div class="q">“Build vs. buy isn’t a debate when the vendor can’t see your <span class="em">data</span>.”</div>
+    <div class="src">, BUSINESS CASE, 2022</div>
+  </section>
+
+  <!-- THE BET -->
+  <section class="narrative">
+    <div class="h">THE BET</div>
+    <div class="body">
+      <p>I made the case to build it ourselves. The economics were obvious: even modest savings against a $500K contract paid back the team in year one. The product case was the harder argument, and the more important one.</p>
+      <p>The thesis: an in-house platform, <span class="em">API-first</span>, would do everything Optimizely did at parity uptime, and add the one thing it structurally couldn’t: exposure events flowing directly into our data lake, joined to every other source we already had in Snowflake.</p>
+      <p>Discipline was the whole strategy. <strong>4 domains, no scope creep.</strong> Features, experiments, attributes, audiences. A clean OpenAPI spec for each. Anything outside those four was a no.</p>
+    </div>
+  </section>
+
+  <!-- BUILD VS BUY COMPARE -->
+  <section class="compare-wrap">
+    <div class="lab">BUILD VS. BUY · WHAT CHANGED</div>
+    <div class="compare">
+      <div class="col">
+        <div class="head">
+          <span class="name">Optimizely</span>
+          <span class="price">$500K / yr</span>
+        </div>
+        <ul>
+          <li>Feature flags, A/B splits, UI</li>
+          <li>Vendor-side analytics, walled off from our data</li>
+          <li>Exposure events stranded outside Snowflake</li>
+          <li>1–2 experiments per month, ceiling enforced by analysis cost</li>
+          <li>1/4 of total IT budget, every year</li>
+        </ul>
+      </div>
+      <div class="col win">
+        <div class="head">
+          <span class="name">In-House Platform</span>
+          <span class="price">infra only</span>
+        </div>
+        <ul>
+          <li>Same flags, splits, audiences, plus 4 clean API domains</li>
+          <li>Exposure logging into Kinesis → Snowflake, joined to everything</li>
+          <li>Looker dashboards on real exposed-user cohorts</li>
+          <li>Tens of experiments per month, self-service</li>
+          <li>Pays for itself in year one, compounds after</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHASES -->
+  <section class="phase-wrap">
+    <div class="lab">EXECUTION · 3 PHASES, NO SCOPE CREEP</div>
+    <div class="phase-grid">
+      <div class="phase">
+        <div class="top"><span class="ph">PHASE 01</span><span>Match</span></div>
+        <h3>Replace</h3>
+        <p class="copy">Stand up the four API domains and the portal. Hit feature parity with what teams were already using on Optimizely. Match uptime. Cut nothing.</p>
+        <div class="lift"><span class="n">Parity</span><span class="l">on day one</span></div>
+      </div>
+      <div class="phase">
+        <div class="top"><span class="ph">PHASE 02</span><span>Differentiate</span></div>
+        <h3>Exceed</h3>
+        <p class="copy">Wire exposure logging from the frontends into Kinesis, on into Snowflake. Looker on top. Every experiment now joins back to every other source of truth we own.</p>
+        <div class="lift"><span class="n">Δ</span><span class="l">vs. vendor capability</span></div>
+      </div>
+      <div class="phase">
+        <div class="top"><span class="ph">PHASE 03</span><span>Compound</span></div>
+        <h3>Scale</h3>
+        <p class="copy">Self-service rollout. Teams spin up experiments without PM or infra bottlenecks. Velocity compounds. The platform earns its keep on capability, not just savings.</p>
+        <div class="lift"><span class="n">10×</span><span class="l">monthly experiment count</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE OUTCOME -->
+  <section class="narrative">
+    <div class="h">THE OUTCOME</div>
+    <div class="body">
+      <p>Experiment velocity moved from <span class="em">1–2</span> a month under the vendor to <span class="em">tens</span> a month on the in-house platform. The unlock wasn’t just speed, it was that every test now produced clean, joinable, cohort-level analysis sitting in Snowflake the moment it concluded.</p>
+      <p>The economics held. The $500K annual line item became a maintenance and infra cost, a fraction of that and still falling on a per-experiment basis as throughput went up. A quarter of IT budget, returned to the business.</p>
+      <p>Strategically, this is a clean case study of the <strong>build vs. buy</strong> decision. The rule: build when both <span class="em">impact</span> and <span class="em">total cost of ownership</span> beat the buy alternative. Both held here: capability the vendor structurally couldn’t deliver, at a TCO well below the contract it replaced.</p>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <section class="next-case">
+    <div class="lab">NEXT</div>
+    <h3><a href="growth-org.html">Building the<br><span class="em">Growth Org →</span></a></h3>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <a href="index.html">© MMXXVI · Monish Sunku Prabhakar</a>
+  <span>
+    <a href="https://www.linkedin.com/in/monishsp/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    &nbsp;·&nbsp;
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:monishsp@gmail.com">Email</a>
+  </span>
+  <span>Design + Code with Claude</span>
+</footer>
+
+<!-- Portfolio chat widget (AI assistant) -->
+<script defer src="/chat-widget.js"></script>
+
+<!-- HubSpot visitor tracking -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246158735.js"></script>
+</body>
+</html>

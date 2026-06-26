@@ -1,0 +1,24 @@
+# Cloudflare Workers config — monishsunkuprabhakar.com
+# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/
+
+# IMPORTANT: set `name` below to match the EXISTING Worker in your Cloudflare
+# dashboard so that the custom domain (monishsunkuprabhakar.com) and current
+# bindings stay attached. If you don't know the name, log in to Cloudflare →
+# Workers & Pages and copy the Worker's name (e.g. "wispy-brook-218f").
+
+name = "wispy-brook-218f"
+main = "src/index.js"
+compatibility_date = "2024-10-22"
+
+# --- Static assets (served by env.ASSETS.fetch in src/index.js) ---
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# --- Workers AI (powers /api/chat) ---
+[ai]
+binding = "AI"
+
+# --- Observability (optional but useful for debugging) ---
+[observability]
+enabled = true

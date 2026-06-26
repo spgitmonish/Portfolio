@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Building the Growth Org, Monish SP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content="Built Gemini's growth product organization from scratch. Hired 3 PMs globally, established the OKR + accountability frameworks, drove 50% delivery velocity through AI integrations." />
+<link rel="canonical" href="https://monishsunkuprabhakar.com/growth-org.html" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Building the Growth Org — Monish Sunku Prabhakar" />
+<meta property="og:description" content="Built the operating system the growth org runs on. OKRs, prioritization rituals, accountability structures. Then hired and coached 3 PMs into it. +50% delivery velocity." />
+<meta property="og:url" content="https://monishsunkuprabhakar.com/growth-org.html" />
+<meta property="og:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Building the Growth Org — Monish Sunku Prabhakar" />
+<meta name="twitter:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .case-hero { padding: 64px 56px 48px; }
+  .case-hero .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: end; }
+  .case-hero h1 { font-family: "Fraunces", serif; font-weight: 600; font-size: clamp(64px, 11vw, 132px); line-height: 0.9; letter-spacing: -0.04em; margin: 24px 0 0; }
+  .case-hero h1 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .case-hero .move { border-left: 1px solid var(--rule); padding-left: 32px; }
+  .case-hero .move p { font-size: 16px; line-height: 1.55; color: var(--ink-soft); margin: 12px 0 0; }
+  .case-hero .move p .em { color: var(--accent); }
+
+  /* Bento */
+  .bento {
+    margin: 0 56px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 220px;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .bento .tile {
+    background: var(--bg2);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tile .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .tile .big { font-family: "Fraunces", serif; font-weight: 600; letter-spacing: -0.03em; line-height: 0.85; }
+  .tile p { font-size: 14px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+  .tile p .em { color: var(--accent); }
+
+  .tile-hero { grid-column: span 3; grid-row: span 2; padding: 40px; }
+  .tile-hero .big { font-size: 220px; color: var(--accent); }
+  .tile-hero .big .pct { font-size: 96px; vertical-align: 36px; margin-left: 4px; font-weight: 500; }
+  .tile-meta { grid-column: span 3; padding: 32px; }
+  .tile-meta .big { font-size: 80px; color: var(--ink); line-height: 1; }
+  .tile-meta .row { display: flex; gap: 12px; align-items: baseline; margin-top: 6px; }
+  .tile-meta .row .name { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); }
+  .tile-small { grid-column: span 1; padding: 24px; }
+  .tile-small .big { font-size: 48px; line-height: 1; color: var(--green); }
+  .tile-small .big.ink { color: var(--ink); }
+  .tile-small .sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  /* Meta strip */
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  .meta div { padding: 20px 28px; border-right: 1px solid var(--rule); }
+  .meta div:last-child { border-right: none; }
+  .meta .k { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .meta .v { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); margin-top: 6px; }
+
+  /* Narrative */
+  .narrative {
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .narrative .h { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+  .narrative .body { columns: 2; column-gap: 40px; }
+  .narrative p { font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 16px; break-inside: avoid; }
+  .narrative p .em { color: var(--accent); font-family: "Fraunces", serif; font-weight: 600; font-size: 1.05em; }
+  .narrative p strong { color: var(--ink); font-weight: 600; }
+
+  /* Pull quote */
+  .pull {
+    padding: 64px 56px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg2);
+  }
+  .pull .q {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 26ch;
+  }
+  .pull .q .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .pull .src { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-top: 28px; }
+
+  /* Phase cards */
+  .phase-wrap { padding: 0 56px 64px; }
+  .phase-wrap .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .phase-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 24px; }
+  .phase {
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .phase .top { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .phase .top .ph { color: var(--accent); }
+  .phase h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 28px; line-height: 1; letter-spacing: -0.03em; color: var(--ink); margin: 0; }
+  .phase .copy { font-size: 13px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+  .phase .lift { border-top: 1px solid var(--rule); padding-top: 12px; display: flex; align-items: baseline; gap: 10px; margin-top: auto; }
+  .phase .lift .n { font-family: "Fraunces", serif; font-weight: 600; font-size: 22px; color: var(--accent); letter-spacing: -0.03em; line-height: 1; }
+  .phase .lift .l { font-family: "JetBrains Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); line-height: 1.3; }
+
+  /* Footer next */
+  .next-case { padding: 64px 56px; border-top: 1px solid var(--rule); }
+  .next-case .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .next-case h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 80px; line-height: 1; letter-spacing: -0.04em; margin: 16px 0 0; color: var(--ink); }
+  .next-case h3 a { transition: color 0.15s; }
+  .next-case h3 a:hover { color: var(--accent); }
+  .next-case h3 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+
+  @media (max-width: 900px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 32px 20px; }
+    .case-hero h1 { font-size: clamp(48px, 12vw, 88px); margin-top: 18px; }
+    .case-hero .grid { grid-template-columns: 1fr; gap: 24px; }
+    .case-hero .move { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 20px; }
+    .bento { margin: 0 20px; grid-auto-rows: auto; grid-template-columns: 1fr 1fr; }
+    .tile-hero { grid-column: span 2; grid-row: auto; padding: 28px; }
+    .tile-hero .big { font-size: 140px; }
+    .tile-hero .big .pct { font-size: 64px; vertical-align: 20px; }
+    .tile-meta { grid-column: span 2; padding: 24px; }
+    .tile-meta .big { font-size: 56px; }
+    .tile-small { grid-column: span 1; padding: 20px; }
+    .tile-small .big { font-size: 38px; }
+    .meta { grid-template-columns: 1fr 1fr; }
+    .meta div { padding: 16px 20px; border-bottom: 1px solid var(--rule); }
+    .meta div:nth-last-child(1) { border-right: none; }
+    .narrative { grid-template-columns: 1fr; gap: 14px; }
+    .narrative .body { columns: 1; }
+    .narrative p { font-size: 15px; }
+    .pull .q { font-size: clamp(28px, 7vw, 44px); }
+    .phase-wrap { padding: 0 20px 40px; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .next-case h3 { font-size: 40px; }
+  }
+
+  @media (max-width: 480px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 24px 16px; }
+    .case-hero h1 { font-size: clamp(40px, 13vw, 64px); }
+    .case-hero .move p { font-size: 14px; }
+    .bento { margin: 0 16px; }
+    .tile-hero { padding: 22px; }
+    .tile-hero .big { font-size: 96px; }
+    .tile-hero .big .pct { font-size: 44px; vertical-align: 14px; }
+    .tile-meta { padding: 20px; }
+    .tile-meta .big { font-size: 44px; }
+    .tile-small { padding: 16px; }
+    .tile-small .big { font-size: 30px; }
+    .tile-small .sub, .tile .lab { font-size: 10px; }
+    .meta div { padding: 14px 16px; }
+    .meta .k, .meta .v { font-size: 10px; }
+    .narrative p { font-size: 14.5px; line-height: 1.6; }
+    .pull { padding: 36px 16px; }
+    .next-case h3 { font-size: 32px; }
+  }
+</style>
+
+<!-- Cloudflare Web Analytics: replace token below after enabling Web Analytics in CF dashboard -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "60c9b48ace564a91b2f7d7e6f0793c27"}'></script>
+
+</head>
+<body>
+
+<header class="site-header" data-screen-label="02 Growth Org">
+  <a class="brand" href="index.html">Monish Sunku Prabhakar</a>
+  <nav>
+    <a href="index.html">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+  </nav>
+  <div class="clock"><a href="index.html">← INDEX</a></div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="mono">CASE 01, BUILDING THE GROWTH ORG · GEMINI · 2024 → ONGOING</div>
+    <div class="grid">
+      <h1>Built the org<br>behind <span class="em">every</span><br>other case study.</h1>
+      <div class="move">
+        <div class="mono">THE MOVE</div>
+        <p>Stepped into Associate Director and built the operating system the growth org runs on: <span class="em">OKRs</span>, prioritization rituals, accountability structures. Then hired and coached into it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO -->
+  <section class="bento">
+    <div class="tile tile-hero">
+      <div class="lab">RESULT · ENGINEERING DELIVERY VELOCITY</div>
+      <div>
+        <div class="big">+50<span class="pct">%</span></div>
+        <p style="margin-top:12px;">Faster delivery across the growth org, achieved through <span class="em">AI integrations</span> and workflow automation. Without compromising security or architectural integrity.</p>
+      </div>
+    </div>
+    <div class="tile tile-meta">
+      <div class="lab">PMs HIRED + COACHED</div>
+      <div>
+        <div class="big">3</div>
+        <div class="row"><span class="name">Globally · into expanded scope and elevated ownership</span></div>
+        <p style="margin-top:8px;">Hired into the framework, then coached. Each PM owns a portfolio surface end-to-end.</p>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">TIME-TO-MARKET</div>
+      <div>
+        <div class="big">−30%</div>
+        <div class="sub">faster from spec to ship</div>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">CUMULATIVE IMPACT</div>
+      <div>
+        <div class="big">$75M+</div>
+        <div class="sub">across the growth portfolio</div>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">PARTNERSHIP</div>
+      <div>
+        <div class="big ink">VP</div>
+        <div class="sub">of Product on quarterly + company strategy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- META -->
+  <section class="meta">
+    <div><div class="k">ROLE</div><div class="v">ASSOC. DIRECTOR, GROWTH</div></div>
+    <div><div class="k">TEAM</div><div class="v">3 PMs GLOBAL · CROSS-FUNCTIONAL POD</div></div>
+    <div><div class="k">DURATION</div><div class="v">Q1 ’24 → ONGOING</div></div>
+    <div><div class="k">NORTH STAR</div><div class="v">PORTFOLIO VELOCITY × IMPACT</div></div>
+    <div><div class="k">STATUS</div><div class="v">SCALING · COMPOUNDING</div></div>
+  </section>
+
+  <!-- THE GAP -->
+  <section class="narrative">
+    <div class="h">THE GAP</div>
+    <div class="body">
+      <p>When I stepped into Associate Director in Q1 2024, growth at Gemini was a collection of <strong>individual PM heroics</strong>. The shipped work was strong, the case studies elsewhere on this site are evidence, but each one ran on the spine of one person making it happen.</p>
+      <p>Velocity ceilings, prioritization debates, and re-litigation of decisions consumed more energy than the work itself. The org had no operating system. To compound the wins, the wins had to stop being individual.</p>
+      <p>The choice was the obvious one: hire, then build, or build, then hire. <span class="em">I picked the harder one.</span></p>
+    </div>
+  </section>
+
+  <!-- PULL -->
+  <section class="pull">
+    <div class="q">“Without an operating system, hiring just <span class="em">multiplies</span> the chaos.”</div>
+    <div class="src">, OPERATING PRINCIPLE</div>
+  </section>
+
+  <!-- THE BET -->
+  <section class="narrative">
+    <div class="h">THE BET</div>
+    <div class="body">
+      <p>Frameworks before people. Five operating principles, set in sequence: <span class="em">experimentation</span> as the default mode of work, <span class="em">business-goal alignment</span> as the prioritization gate, <span class="em">metrics review and VOC</span> as recurring rituals, <span class="em">AI</span> layered through every workflow, and <span class="em">high ownership</span> as the cultural floor.</p>
+      <p>Then hire into the framework, not around it. Each new PM stepped into a defined surface with defined success metrics on day one. Coaching focused on expanding scope and elevating ownership rather than handholding through repetitive decisions.</p>
+      <p>And throughout, the partnership with the VP of Product on quarterly and company-level strategy tied the org’s output back to executive investment decisions, so the work always pointed at outcomes leadership was already optimizing for.</p>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="phase-wrap">
+    <div class="lab">OPERATING PRINCIPLES · THE OS THE TEAM RUNS ON</div>
+    <div class="phase-grid">
+
+      <div class="phase">
+        <div class="top"><span class="ph">PRINCIPLE 01</span><span>Default</span></div>
+        <h3>Experimentation</h3>
+        <p class="copy">Every initiative runs as an experiment. Clear hypothesis upfront, dashboard owned by the PM, results owned end-to-end. Hypothesis to analysis is the work, not a layer on top of it.</p>
+        <div class="lift"><span class="n">100%</span><span class="l">hypothesis-driven</span></div>
+      </div>
+
+      <div class="phase">
+        <div class="top"><span class="ph">PRINCIPLE 02</span><span>Gate</span></div>
+        <h3>Goal Alignment</h3>
+        <p class="copy">Roadmap and business-goal alignment as the prioritization gate. If it doesn&rsquo;t ladder up to a company goal, it doesn&rsquo;t ship. Sharper tradeoffs, fewer debates, no orphan work.</p>
+        <div class="lift"><span class="n">→</span><span class="l">company KPI by construction</span></div>
+      </div>
+
+      <div class="phase">
+        <div class="top"><span class="ph">PRINCIPLE 03</span><span>Ritual</span></div>
+        <h3>Metrics + VOC</h3>
+        <p class="copy">Metrics review and Voice of the Customer as recurring rituals everyone joins. Bring perspectives, not just consume readouts. The team stays grounded in numbers and in user reality at the same cadence.</p>
+        <div class="lift"><span class="n">weekly</span><span class="l">shared signal</span></div>
+      </div>
+
+      <div class="phase">
+        <div class="top"><span class="ph">PRINCIPLE 04</span><span>Multiplier</span></div>
+        <h3>AI-Native</h3>
+        <p class="copy">AI layered through every workflow: enterprise licenses across the team, Linear MCP for AI-driven project management, AI wireframing for faster design and engineering iteration. The team ships at a different speed.</p>
+        <div class="lift"><span class="n">+50%</span><span class="l">delivery velocity</span></div>
+      </div>
+
+      <div class="phase">
+        <div class="top"><span class="ph">PRINCIPLE 05</span><span>Culture</span></div>
+        <h3>Ownership</h3>
+        <p class="copy">High ownership as the floor, bias to execution as the ceiling. Decisions get made and shipped, lessons get captured, nothing waits on permission. The job is owning the outcome, not orchestrating around it.</p>
+        <div class="lift"><span class="n">−30%</span><span class="l">time-to-market</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE OUTCOME -->
+  <section class="narrative">
+    <div class="h">THE OUTCOME</div>
+    <div class="body">
+      <p>The four other case studies on this site, Recurring Buy, Credit Card Cross-Sell, Referrals, and the Experimentation Platform, are the visible output. The less visible output is that any one of them is now reproducible by the next PM in the seat, on the rituals and frameworks the org runs on.</p>
+      <p>Cumulative business impact across the growth portfolio sits at <span class="em">$75M+</span> and continues to compound. Engineering delivery velocity is up <span class="em">50%</span>. Time-to-market is down <span class="em">30%</span>. And the partnership cadence with the VP of Product means the org’s work is consistently tied to the company-level KPIs leadership is already optimizing.</p>
+      <p>Strategically, this is the work I point to when someone asks <strong>what changes when you go from senior PM to leader of PMs</strong>. The answer: you stop shipping the product. You start shipping <span class="em">the system that ships the product</span>.</p>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <section class="next-case">
+    <div class="lab">NEXT</div>
+    <h3><a href="recurring-buy.html">Recurring<br><span class="em">Buy →</span></a></h3>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <a href="index.html">© MMXXVI · Monish Sunku Prabhakar</a>
+  <span>
+    <a href="https://www.linkedin.com/in/monishsp/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    &nbsp;·&nbsp;
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:monishsp@gmail.com">Email</a>
+  </span>
+  <span>Design + Code with Claude</span>
+</footer>
+
+<!-- Portfolio chat widget (AI assistant) -->
+<script defer src="/chat-widget.js"></script>
+
+<!-- HubSpot visitor tracking -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246158735.js"></script>
+</body>
+</html>

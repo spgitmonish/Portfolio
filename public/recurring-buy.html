@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Recurring Buy, Monish SP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content="From 0.2% to 10% of MTUs on a recurring buy at Gemini. A 50× lift on baseline adoption. 33,000 users moved into autopilot investing, from a 600-user baseline." />
+<link rel="canonical" href="https://monishsunkuprabhakar.com/recurring-buy.html" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Recurring Buy — Monish Sunku Prabhakar" />
+<meta property="og:description" content="From 0.2% to 10% of MTUs at Gemini. A 50× lift on baseline adoption. Education-first, ROI-positive by construction." />
+<meta property="og:url" content="https://monishsunkuprabhakar.com/recurring-buy.html" />
+<meta property="og:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Recurring Buy — Monish Sunku Prabhakar" />
+<meta name="twitter:image" content="https://monishsunkuprabhakar.com/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .case-hero { padding: 64px 56px 48px; }
+  .case-hero .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: end; }
+  .case-hero h1 { font-family: "Fraunces", serif; font-weight: 600; font-size: clamp(64px, 11vw, 132px); line-height: 0.9; letter-spacing: -0.04em; margin: 24px 0 0; }
+  .case-hero h1 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .case-hero .move { border-left: 1px solid var(--rule); padding-left: 32px; }
+  .case-hero .move p { font-size: 16px; line-height: 1.55; color: var(--ink-soft); margin: 12px 0 0; }
+  .case-hero .move p .em { color: var(--accent); }
+
+  /* Bento */
+  .bento {
+    margin: 0 56px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 220px;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .bento .tile {
+    background: var(--bg2);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tile .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .tile .big { font-family: "Fraunces", serif; font-weight: 600; letter-spacing: -0.03em; line-height: 0.85; }
+  .tile p { font-size: 14px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+  .tile p .em { color: var(--accent); }
+
+  .tile-hero { grid-column: span 3; grid-row: span 2; padding: 40px; }
+  .tile-hero .big { font-size: 220px; color: var(--accent); }
+  .tile-hero .big sup { font-size: 80px; }
+  .tile-users { grid-column: span 3; }
+  .tile-users .big { font-size: 100px; color: var(--ink); line-height: 1; }
+  .tile-small { grid-column: span 1; padding: 24px; }
+  .tile-small .big { font-size: 64px; line-height: 1; color: var(--green); }
+  .tile-small .big.ink { color: var(--ink); }
+  .tile-small .sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  /* Meta strip */
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  .meta div { padding: 20px 28px; border-right: 1px solid var(--rule); }
+  .meta div:last-child { border-right: none; }
+  .meta .k { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .meta .v { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); margin-top: 6px; }
+
+  /* Narrative */
+  .narrative {
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .narrative .h { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+  .narrative .body { columns: 2; column-gap: 40px; }
+  .narrative p { font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 16px; break-inside: avoid; }
+  .narrative p .em { color: var(--accent); font-family: "Fraunces", serif; font-weight: 600; font-size: 1.05em; }
+  .narrative p strong { color: var(--ink); font-weight: 600; }
+
+  /* Pull quote */
+  .pull {
+    padding: 64px 56px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg2);
+  }
+  .pull .q {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 24ch;
+  }
+  .pull .q .em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .pull .src { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-top: 28px; }
+
+  /* Phase cards */
+  .phase-wrap { padding: 0 56px 64px; }
+  .phase-wrap .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .phase-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+  .phase {
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .phase .top { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .phase .top .ph { color: var(--accent); }
+  .phase h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 56px; line-height: 1; letter-spacing: -0.03em; color: var(--ink); margin: 0; }
+  .phase .copy { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+  .phase .lift { border-top: 1px solid var(--rule); padding-top: 16px; margin-top: auto; display: flex; align-items: center; gap: 12px; }
+  .phase .lift .n { font-family: "Fraunces", serif; font-weight: 600; font-size: 44px; color: var(--green); letter-spacing: -0.03em; }
+  .phase .lift .l { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+
+  /* Footer next */
+  .next-case { padding: 64px 56px; border-top: 1px solid var(--rule); }
+  .next-case .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .next-case h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 80px; line-height: 1; letter-spacing: -0.04em; margin: 16px 0 0; color: var(--ink); }
+  .next-case h3 a { transition: color 0.15s; }
+  .next-case h3 a:hover { color: var(--accent); }
+  .next-case h3 .em { color: var(--accent); font-style: italic; font-weight: 400; }
+
+  @media (max-width: 900px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 32px 20px; }
+    .case-hero h1 { font-size: clamp(48px, 12vw, 88px); margin-top: 18px; }
+    .case-hero .grid { grid-template-columns: 1fr; gap: 24px; }
+    .case-hero .move { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 20px; }
+    .bento { margin: 0 20px; grid-auto-rows: auto; grid-template-columns: 1fr 1fr; }
+    .tile-hero { grid-column: span 2; grid-row: auto; padding: 28px; }
+    .tile-hero .big { font-size: 120px; }
+    .tile-hero .big sup { font-size: 48px; }
+    .tile-users { grid-column: span 2; padding: 24px; }
+    .tile-users .big { font-size: 64px; }
+    .tile-small { grid-column: span 1; padding: 20px; }
+    .tile-small .big { font-size: 44px; }
+    .meta { grid-template-columns: 1fr 1fr; }
+    .meta div { padding: 16px 20px; border-bottom: 1px solid var(--rule); }
+    .narrative { grid-template-columns: 1fr; gap: 14px; }
+    .narrative .body { columns: 1; }
+    .narrative p { font-size: 15px; }
+    .pull .q { font-size: clamp(28px, 7vw, 44px); }
+    .phase-wrap { padding: 0 20px 40px; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .next-case h3 { font-size: 40px; }
+  }
+
+  @media (max-width: 480px) {
+    .case-hero, .narrative, .pull, .next-case { padding: 24px 16px; }
+    .case-hero h1 { font-size: clamp(40px, 13vw, 64px); }
+    .case-hero .move p { font-size: 14px; }
+    .bento { margin: 0 16px; }
+    .tile-hero { padding: 22px; }
+    .tile-hero .big { font-size: 84px; }
+    .tile-hero .big sup { font-size: 34px; }
+    .tile-users { padding: 20px; }
+    .tile-users .big { font-size: 48px; }
+    .tile-small { padding: 16px; }
+    .tile-small .big { font-size: 28px; }
+    .tile-small .sub, .tile .lab { font-size: 10px; }
+    .meta div { padding: 14px 16px; }
+    .meta .k, .meta .v { font-size: 10px; }
+    .narrative p { font-size: 14.5px; line-height: 1.6; }
+    .pull { padding: 36px 16px; }
+    .next-case h3 { font-size: 32px; }
+  }
+</style>
+
+<!-- Cloudflare Web Analytics: replace token below after enabling Web Analytics in CF dashboard -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "60c9b48ace564a91b2f7d7e6f0793c27"}'></script>
+
+</head>
+<body>
+
+<header class="site-header" data-screen-label="03 Recurring Buy">
+  <a class="brand" href="index.html">Monish Sunku Prabhakar</a>
+  <nav>
+    <a href="index.html">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+  </nav>
+  <div class="clock"><a href="index.html">← INDEX</a></div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="mono">CASE 02, RECURRING BUY · GEMINI · 2025</div>
+    <div class="grid">
+      <h1>From <span class="em">0.2%</span><br>to <span class="em">10%</span> of MTUs.</h1>
+      <div class="move">
+        <div class="mono">THE MOVE</div>
+        <p>I bet that recurring investing wasn’t a feature problem, it was a <span class="em">narrative</span> problem. Education-first, incentive-second, ROI-positive by construction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO -->
+  <section class="bento">
+    <div class="tile tile-hero">
+      <div class="lab">RESULT · NORTH-STAR LIFT</div>
+      <div>
+        <div class="big">10<sup>%</sup></div>
+        <p style="margin-top:12px;">Of monthly transacting users on a recurring buy, 60 days post-launch. Up from 0.2% baseline. <span class="em">50× lift in adoption rate.</span></p>
+      </div>
+    </div>
+    <div class="tile tile-users">
+      <div class="lab">USERS ON RECURRING BUY</div>
+      <div class="big">33,000</div>
+      <p>From a <span class="em">600</span>-user baseline. <span class="em">55× in absolute users.</span></p>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">EDU PHASE</div>
+      <div>
+        <div class="big">4×</div>
+        <div class="sub">conversion lift</div>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">REWARD PHASE</div>
+      <div>
+        <div class="big">8×</div>
+        <div class="sub">conversion lift</div>
+      </div>
+    </div>
+    <div class="tile tile-small">
+      <div class="lab">INCENTIVE CAP</div>
+      <div>
+        <div class="big ink">$150</div>
+        <div class="sub">over 12 mo · ROI+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- META -->
+  <section class="meta">
+    <div><div class="k">ROLE</div><div class="v">ASSOC. DIRECTOR, GROWTH</div></div>
+    <div><div class="k">TEAM</div><div class="v">1 PM · 1 DESIGN · 6 ENG · 1 DATA · 1 MKTG</div></div>
+    <div><div class="k">DURATION</div><div class="v">Q3 ’25</div></div>
+    <div><div class="k">NORTH STAR</div><div class="v">MONTHLY TRANSACTING USERS (MTU)</div></div>
+    <div><div class="k">STATUS</div><div class="v">SHIPPED · MEASURED</div></div>
+  </section>
+
+  <!-- THE GAP -->
+  <section class="narrative">
+    <div class="h">THE GAP</div>
+    <div class="body">
+      <p>The North-Star at Gemini was Monthly Transacting Users, and the team had been pushing on the top of the funnel for a year. The numbers crept up. The shape of the line stayed the same.</p>
+      <p>I’d been watching a different number. Of all monthly transacting users, only <span class="em">0.2%</span> had a recurring buy active. The product existed: well-built, well-priced, and almost no one was using it. That was the gap.</p>
+    </div>
+  </section>
+
+  <!-- PULL -->
+  <section class="pull">
+    <div class="q">“Recurring buy isn’t a feature.<br>It’s a <span class="em">habit</span>, and habits don’t respond to ads.”</div>
+    <div class="src">, SPEC DOC, DAY ONE</div>
+  </section>
+
+  <!-- THE BET -->
+  <section class="narrative">
+    <div class="h">THE BET</div>
+    <div class="body">
+      <p>I made the call to treat Recurring Buy not as a feature but as a multi-week <span class="em">growth experience</span>. Education first, incentive second.</p>
+      <p>The hypothesis, written down: replace the conversion-first surface with an education-first one, back it with an ROI-positive incentive, and we move from 0.2% to 10% of MTUs within two quarters. A <span class="em">50×</span> bet.</p>
+    </div>
+  </section>
+
+  <!-- THE DIAGNOSIS -->
+  <section class="narrative">
+    <div class="h">THE DIAGNOSIS</div>
+    <div class="body">
+      <p>0.2% adoption isn&rsquo;t one problem, it&rsquo;s three. Before designing the experience, I asked which gap was binding: did users know the feature existed (<span class="em">awareness</span>)? Could they find it when they wanted it (<span class="em">discoverability</span>)? Could they actually commit (<span class="em">friction</span>)? All three were broken. We attacked all three.</p>
+    </div>
+  </section>
+
+  <!-- THE THREE PILLARS -->
+  <section class="phase-wrap">
+    <div class="lab">THREE ROOT CAUSES · THREE FIXES</div>
+    <div class="phase-grid three">
+      <div class="phase">
+        <div class="top"><span class="ph">PILLAR 01</span><span>Did they know?</span></div>
+        <h3>Awareness</h3>
+        <p class="copy"><strong>Problem.</strong> Most users didn&rsquo;t know recurring buy existed. The feature lived inside the trade flow.</p>
+        <p class="copy"><strong>Fix.</strong> Dedicated in-app surfaces and an education email arc explaining what recurring buy was and how to use it. Framed around outcomes: what compounding looks like, not what the feature does.</p>
+        <div class="lift"><span class="n">&rarr;</span><span class="l">In-app + email education</span></div>
+      </div>
+      <div class="phase">
+        <div class="top"><span class="ph">PILLAR 02</span><span>Could they find it?</span></div>
+        <h3>Discoverability</h3>
+        <p class="copy"><strong>Problem.</strong> The entry point was buried two taps deep, behind a default state that always landed on one-time buys.</p>
+        <p class="copy"><strong>Fix.</strong> Promoted recurring buy to a dedicated card on the home screen, the first surface every user sees on app open. No more hunting.</p>
+        <div class="lift"><span class="n">&rarr;</span><span class="l">Home-screen card placement</span></div>
+      </div>
+      <div class="phase">
+        <div class="top"><span class="ph">PILLAR 03</span><span>Could they commit?</span></div>
+        <h3>Friction</h3>
+        <p class="copy"><strong>Problem.</strong> Setup demanded an amount and asset with no preview of outcomes. Most users didn&rsquo;t see the value.</p>
+        <p class="copy"><strong>Fix.</strong> A calculator built into the commit flow: pick an amount and asset, see what the same plan would have returned over 5 years on real historical prices. Education at the moment of decision, easy commit on the other side.</p>
+        <div class="lift"><span class="n">&rarr;</span><span class="l">Simulator + one-tap commit</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHASES -->
+  <section class="phase-wrap">
+    <div class="lab">EXPERIENCE STRUCTURE</div>
+    <div class="phase-grid">
+      <div class="phase">
+        <div class="top"><span class="ph">PHASE 01</span><span>3 weeks</span></div>
+        <h3>Education</h3>
+        <p class="copy">Slider-driven simulator. Pick an amount, pick an asset, see what the same plan would have returned over 5 years on real historical prices. CTA pressure deliberately undersold.</p>
+        <div class="lift"><span class="n">4×</span><span class="l">conversion lift vs. control</span></div>
+      </div>
+      <div class="phase">
+        <div class="top"><span class="ph">PHASE 02</span><span>up to 12 mo</span></div>
+        <h3>Reward</h3>
+        <p class="copy">If user hadn’t committed, they entered the reward track: payouts at 3-, 6-, and 12-month milestones. Capped at $150. Tuned with finance until provably ROI+.</p>
+        <div class="lift"><span class="n">8×</span><span class="l">conversion lift vs. control</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE EXPERIENCE -->
+  <section class="narrative">
+    <div class="h">THE EXPERIENCE</div>
+    <div class="body">
+      <p>The simulator was the soul of the thing. We tuned its physics and copy across <span class="em">11</span> internal builds before it shipped. The slider had to feel like a tool you’d use to think, not a step in a funnel.</p>
+      <p>The reward design was the discipline of the thing. Every payout band was modeled against retention curves and per-user revenue share. We refused to ship anything that wasn’t ROI-positive on its own.</p>
+    </div>
+  </section>
+
+  <!-- THE OUTCOME -->
+  <section class="narrative">
+    <div class="h">THE OUTCOME</div>
+    <div class="body">
+      <p>Two wins, distinct on attribution. <strong>Fully attributable:</strong> recurring-buy users moved from <span class="em">600</span> to <span class="em">33,000</span>, a 55× lift in absolute users, and adoption rate moved from 0.2% to 10% of MTUs, a 50× lift in rate. Both are direct outputs of the experience and the experimentation that shaped it.</p>
+      <p><strong>Contributed to:</strong> the platform’s MTU base grew from ~300K to ~330K over the same window, and recurring buy was one retention lever among several pulling on it. The compounding nature of the behavior, every adopter transacting automatically thereafter, made it a structural contributor rather than a one-time spike.</p>
+    </div>
+  </section>
+
+  <!-- GO DEEPER -->
+  <section class="narrative" style="border-bottom:none;padding-bottom:0;">
+    <div class="h">GO DEEPER</div>
+    <div class="body">
+      <p style="font-size:18px;line-height:1.5;color:var(--ink);">
+        <a href="/recurring-buy/roi" style="border-bottom:1px solid var(--accent);padding-bottom:2px;color:var(--ink);transition:color 0.15s;">
+          <span class="em" style="color:var(--accent);font-family:'Fraunces',serif;font-weight:600;">Appendix A · ROI Modeling and Outcomes</span> &rarr;
+        </a>
+      </p>
+      <p style="font-size:14px;color:var(--ink-soft);margin-top:6px;">The band-level NPV math, the payout structure, the conversion lifts, and the one thing we got wrong.</p>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <section class="next-case">
+    <div class="lab">NEXT</div>
+    <h3><a href="credit-card.html">Credit Card<br><span class="em">Cross-Sell →</span></a></h3>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <a href="index.html">© MMXXVI · Monish Sunku Prabhakar</a>
+  <span>
+    <a href="https://www.linkedin.com/in/monishsp/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    &nbsp;·&nbsp;
+    <a href="https://drive.google.com/file/d/1t0di52gnOk1m6x9-okIkmnu_9UFEgyrw/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:monishsp@gmail.com">Email</a>
+  </span>
+  <span>Design + Code with Claude</span>
+</footer>
+
+<!-- Portfolio chat widget (AI assistant) -->
+<script defer src="/chat-widget.js"></script>
+
+<!-- HubSpot visitor tracking -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246158735.js"></script>
+</body>
+</html>

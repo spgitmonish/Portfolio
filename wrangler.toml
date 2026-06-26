@@ -22,3 +22,9 @@ binding = "AI"
 # --- Observability (optional but useful for debugging) ---
 [observability]
 enabled = true
+
+# --- Analytics Engine: queryable usage tracking for /api/chat ---
+# Free tier: 10M data points/month. View via dashboard → Storage & Databases → Analytics Engine.
+[[analytics_engine_datasets]]
+binding = "CHAT_ANALYTICS"
+dataset = "monish_portfolio_chat"

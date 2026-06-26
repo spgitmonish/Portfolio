@@ -161,7 +161,10 @@ export default {
 };
 
 async function handleChat(request, env) {
+  const startTime = Date.now();
+
   if (!env.AI) {
+    track(env, request, { status: 'config_error', latency: 0, question: '', response: '', error: 'AI binding missing' });
     return json({
       error: 'AI binding not configured. Add an AI binding named "AI" in the Worker settings.'
     }, 500);
@@ -171,19 +174,23 @@ async function handleChat(request, env) {
   try {
     body = await request.json();
   } catch {
+    track(env, request, { status: 'bad_request', latency: Date.now() - startTime, question: '', response: '', error: 'invalid_json' });
     return json({ error: 'Invalid JSON body' }, 400);
   }
 
   const messages = Array.isArray(body?.messages) ? body.messages : null;
   if (!messages || messages.length === 0) {
+    track(env, request, { status: 'bad_request', latency: Date.now() - startTime, question: '', response: '', error: 'missing_messages' });
     return json({ error: 'Missing messages array' }, 400);
   }
 
   const lastUser = messages[messages.length - 1];
   if (lastUser?.role !== 'user' || typeof lastUser?.content !== 'string') {
+    track(env, request, { status: 'bad_request', latency: Date.now() - startTime, question: '', response: '', error: 'malformed_message' });
     return json({ error: 'Last message must be a user message with string content' }, 400);
   }
   if (lastUser.content.length > 600) {
+    track(env, request, { status: 'bad_request', latency: Date.now() - startTime, question: lastUser.content, response: '', error: 'message_too_long' });
     return json({ error: 'Message too long — keep it under 600 characters.' }, 400);
   }
 
@@ -206,11 +213,74 @@ async function handleChat(request, env) {
 
     const text = (response && (response.response || response.result || '')).trim();
     if (!text) {
+      track(env, request, { status: 'empty_response', latency: Date.now() - startTime, question: lastUser.content, response: '', error: 'model_returned_empty' });
       return json({ error: 'Empty response from model' }, 502);
     }
+    track(env, request, { status: 'success', latency: Date.now() - startTime, question: lastUser.content, response: text, error: '', turn: messages.length });
     return json({ message: text });
   } catch (err) {
-    return json({ error: 'AI call failed', detail: String(err?.message || err) }, 502);
+    const errMsg = String(err?.message || err);
+    track(env, request, { status: 'ai_error', latency: Date.now() - startTime, question: lastUser.content, response: '', error: errMsg });
+    return json({ error: 'AI call failed', detail: errMsg }, 502);
+  }
+}
+
+// ---------- OBSERVABILITY ----------
+// Dual-track every chat:
+//   1. console.log → Workers Logs (real-time via dashboard → Worker → Logs)
+//   2. Analytics Engine → SQL-queryable usage data (dashboard → Storage & DBs → Analytics Engine)
+function track(env, request, event) {
+  const referer = request.headers.get('referer') || 'direct';
+  const ua = (request.headers.get('user-agent') || '').slice(0, 120);
+  const country = request.cf?.country || 'unknown';
+  const colo = request.cf?.colo || 'unknown';
+
+  // 1. Structured console log (visible in Workers Logs / Tail)
+  try {
+    console.log(JSON.stringify({
+      event: 'chat',
+      status: event.status,
+      latency_ms: event.latency,
+      question: (event.question || '').slice(0, 200),
+      response_preview: (event.response || '').slice(0, 160),
+      response_length: (event.response || '').length,
+      error: event.error || '',
+      referer,
+      country,
+      colo,
+      turn: event.turn || 1,
+      ua_preview: ua.slice(0, 60)
+    }));
+  } catch {}
+
+  // 2. Analytics Engine data point (queryable via SQL)
+  if (env.CHAT_ANALYTICS && typeof env.CHAT_ANALYTICS.writeDataPoint === 'function') {
+    try {
+      env.CHAT_ANALYTICS.writeDataPoint({
+        // Indexes are for filtering (max 1 currently per CF docs)
+        indexes: [event.status || 'unknown'],
+        // Blobs: searchable string dimensions (max 20, ~5KB each)
+        blobs: [
+          event.status || 'unknown',                       // blob1: status
+          (event.question || '').slice(0, 200),            // blob2: question
+          (event.response || '').slice(0, 200),            // blob3: response preview
+          referer,                                         // blob4: referrer (which page)
+          (event.error || '').slice(0, 200),               // blob5: error msg
+          country,                                         // blob6: country
+          ua.slice(0, 80)                                  // blob7: user agent
+        ],
+        // Doubles: numeric metrics
+        doubles: [
+          event.latency || 0,                              // double1: latency_ms
+          (event.question || '').length,                   // double2: question length
+          (event.response || '').length,                   // double3: response length
+          event.turn || 1                                  // double4: turn # in convo
+        ]
+      });
+    } catch (e) {
+      // Don't let analytics failures break the chat response
+      try { console.log(JSON.stringify({ event: 'analytics_write_failed', error: String(e?.message || e) })); } catch {}
+    }
   }
 }
 

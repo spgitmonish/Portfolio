@@ -254,9 +254,9 @@ function track(env, request, event) {
   } catch {}
 
   // 2. Analytics Engine data point (queryable via SQL)
-  if (env.CHAT_ANALYTICS && typeof env.CHAT_ANALYTICS.writeDataPoint === 'function') {
+  if (env.ANALYTICS_ENGINE && typeof env.ANALYTICS_ENGINE.writeDataPoint === 'function') {
     try {
-      env.CHAT_ANALYTICS.writeDataPoint({
+      env.ANALYTICS_ENGINE.writeDataPoint({
         // Indexes are for filtering (max 1 currently per CF docs)
         indexes: [event.status || 'unknown'],
         // Blobs: searchable string dimensions (max 20, ~5KB each)

@@ -132,6 +132,22 @@
   border-bottom: 1px solid rgba(109,201,122,0.4);
 }
 .mp-msg.bot a:hover { border-bottom-color: #6dc97a; }
+.mp-msg.bot p { margin: 0 0 10px; }
+.mp-msg.bot p:last-child { margin-bottom: 0; }
+.mp-msg.bot ul, .mp-msg.bot ol { margin: 0 0 10px; padding-left: 22px; }
+.mp-msg.bot ul:last-child, .mp-msg.bot ol:last-child { margin-bottom: 0; }
+.mp-msg.bot li { margin-bottom: 6px; line-height: 1.5; }
+.mp-msg.bot li:last-child { margin-bottom: 0; }
+.mp-msg.bot strong { color: #ffffff; font-weight: 600; }
+.mp-msg.bot em { font-style: italic; color: #b8b6a8; }
+.mp-msg.bot code {
+  background: rgba(255,255,255,0.07);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12.5px;
+  color: #6dc97a;
+}
 .mp-msg.bot.welcome {
   background: transparent;
   padding: 0;
@@ -338,19 +354,55 @@
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
-  function linkify(s) {
-    // Auto-link emails and /paths and bare URLs
-    let out = escapeHtml(s);
-    out = out.replace(/(\b[\w.+-]+@[\w-]+\.[\w.-]+)/g, '<a href="mailto:$1">$1</a>');
-    out = out.replace(/(\bhttps?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
-    out = out.replace(/(^|\s)(\/[a-z0-9][a-z0-9\-\/]*)/gi, (m, pre, p) => `${pre}<a href="${p}">${p}</a>`);
-    return out;
+  function renderMarkdown(text) {
+    // 1) Escape first
+    let s = escapeHtml(String(text || ''));
+
+    // 2) Inline formatting (bold/italic/code) — bold before italic to avoid greedy single-* matches
+    s = s.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/(^|[^*\w])\*([^*\n]+)\*(?!\*)/g, '$1<em>$2</em>');
+    s = s.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+
+    // 3) Linkify (emails, URLs, root-relative paths)
+    s = s.replace(/(\b[\w.+-]+@[\w-]+\.[\w.-]+)/g, '<a href="mailto:$1">$1</a>');
+    s = s.replace(/(\bhttps?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+    s = s.replace(/(^|[\s(])(\/[a-z0-9][a-z0-9\-\/]*)/gi, (m, pre, p) => `${pre}<a href="${p}">${p}</a>`);
+
+    // 4) Block-level: split into paragraphs by blank lines, detect lists per block
+    const blocks = s.split(/\n\s*\n/);
+    const html = blocks.map(block => {
+      const trimmed = block.trim();
+      if (!trimmed) return '';
+      const lines = trimmed.split('\n').map(l => l.trim()).filter(Boolean);
+
+      // Numbered list (every line starts with "N.")
+      if (lines.length > 1 && lines.every(l => /^\d+\.\s+/.test(l))) {
+        return '<ol>' + lines.map(l => '<li>' + l.replace(/^\d+\.\s+/, '') + '</li>').join('') + '</ol>';
+      }
+
+      // Bullet list (every line starts with "- " or "* ")
+      if (lines.length > 1 && lines.every(l => /^[-*]\s+/.test(l))) {
+        return '<ul>' + lines.map(l => '<li>' + l.replace(/^[-*]\s+/, '') + '</li>').join('') + '</ul>';
+      }
+
+      // Mixed: single-line list (one item only)
+      if (lines.length === 1 && /^(\d+\.|[-*])\s+/.test(lines[0])) {
+        const isNumbered = /^\d+\./.test(lines[0]);
+        const tag = isNumbered ? 'ol' : 'ul';
+        return `<${tag}><li>` + lines[0].replace(/^(\d+\.|[-*])\s+/, '') + `</li></${tag}>`;
+      }
+
+      // Regular paragraph: single newlines → <br>
+      return '<p>' + lines.join('<br>') + '</p>';
+    }).join('');
+
+    return html;
   }
 
   function addMsg(role, content, opts = {}) {
     const div = document.createElement('div');
     div.className = `mp-msg ${role}`;
-    if (role === 'bot' && opts.html) div.innerHTML = linkify(content);
+    if (role === 'bot' && opts.html) div.innerHTML = renderMarkdown(content);
     else div.textContent = content;
     msgsEl.appendChild(div);
     msgsEl.scrollTop = msgsEl.scrollHeight;

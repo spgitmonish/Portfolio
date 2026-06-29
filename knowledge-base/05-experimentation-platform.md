@@ -11,6 +11,13 @@
 
 Killed a **$500K Optimizely contract** — a quarter of total IT budget — with an in-house **API-first** platform that did what the vendor structurally couldn't: connect experiments directly to our data lake. **10× experiment velocity** (1–2 per month → tens per month). Pays for itself on maintenance and infra alone, every year.
 
+## Strategic frame
+
+**Strategy type:** Proactive
+**Sources of insight:** Strategic Insight · Data Insight
+
+A **proactive** cost-cutting bet on a **$500K** under-utilized vendor (data signal), backed by the strategic insight that connecting experiments to **customer-360 data** would unlock the value Optimizely structurally couldn't deliver.
+
 ## The gap
 
 Gemini was paying Optimizely roughly **$500K** a year, about **a quarter of total IT budget**, for a platform doing the basics of experimentation: feature flags, A/B splits, a UI to spin up tests.

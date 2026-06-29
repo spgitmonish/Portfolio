@@ -10,6 +10,13 @@
 
 Built the foundational referral system during crypto winter (late 2023) when paid acquisition collapsed. **$35M+ in directly attributed revenue** since inception. Multi-surface: exchange + credit card. **Best flat payout referral offer in the industry** at $50 standard.
 
+## Strategic frame
+
+**Strategy type:** Reactive
+**Sources of insight:** Strategic Insight · Data Insight
+
+A **reactive** bet. With paid acquisition collapsing in crypto winter (CPMs rising, ROAS falling — data signal), used **product-led growth** as the strategic lever to keep the user base growing through the downturn.
+
 ## The gap — late 2023
 
 Late 2023 was the trough of **crypto winter**. Trading volumes had collapsed, exchange revenue with them. Across the industry every growth team had its paid budget cut to the bone.

@@ -70,6 +70,15 @@
   .tile-small .big.ink { color: var(--ink); }
   .tile-small .sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
 
+  /* Strategic frame callout */
+  .strategic-frame { padding: 28px 56px; border-bottom: 1px solid var(--rule); }
+  .strategic-frame .frame-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+  .strategic-frame .lab { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+  .strategic-frame .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .strategic-frame .tag { font-family: "JetBrains Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; padding: 5px 11px; border-radius: 100px; border: 1px solid var(--accent); color: var(--accent); }
+  .strategic-frame p { font-family: "Fraunces", serif; font-weight: 500; font-size: 19px; line-height: 1.45; letter-spacing: -0.01em; color: var(--ink-soft); margin: 0; max-width: 72ch; }
+  .strategic-frame p strong { color: var(--ink); font-weight: 600; }
+
   /* Meta strip */
   .meta {
     display: grid;
@@ -372,6 +381,15 @@
     <div><div class="k">DURATION</div><div class="v">Q4 ’23 → ONGOING</div></div>
     <div><div class="k">NORTH STAR</div><div class="v">ORGANIC ACQUISITION → REVENUE</div></div>
     <div><div class="k">STATUS</div><div class="v">SHIPPED · COMPOUNDING</div></div>
+  </section>
+
+  <!-- STRATEGIC FRAME -->
+  <section class="strategic-frame">
+    <div class="frame-head">
+      <span class="lab">STRATEGIC FRAME &middot; REACTIVE</span>
+      <div class="tags"><span class="tag">STRATEGIC INSIGHT</span><span class="tag">DATA INSIGHT</span></div>
+    </div>
+    <p>A <strong>reactive</strong> bet. With paid acquisition collapsing in crypto winter (CPMs rising, ROAS falling), used <strong>product-led growth</strong> as the strategic lever to keep the user base growing through the downturn.</p>
   </section>
 
   <!-- THE GAP -->

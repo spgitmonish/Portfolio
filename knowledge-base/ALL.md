@@ -206,6 +206,13 @@ The four other case studies on the portfolio (Recurring Buy, Credit Card Cross-S
 
 From **0.2% to 10% of MTUs** on a recurring buy — a **50× lift in adoption rate**. Recurring-buy users moved from **600 to 33,000** — a **55× lift in absolute users**. Education-first, ROI-positive by construction.
 
+## Strategic frame
+
+**Strategy type:** Proactive
+**Sources of insight:** Strategic Insight · Data Insight
+
+A **proactive** bet. Identified a gap in recurring-revenue-generating users through cohort data, with the strategic opportunity to move the company's north-star KPI: **Monthly Transacting Users**.
+
 ## The gap
 
 Gemini's north-star was Monthly Transacting Users (MTU). The team had been pushing on the top of the funnel for a year. Numbers crept up; the shape of the line stayed the same.
@@ -443,6 +450,13 @@ The version of incentive design worth scaling is the one where you can prove the
 
 Grew Gemini's credit card holders from **~1,000 to ~30,000** — a **30× lift**. Not by changing the product, but by moving the cross-sell to **peak intent**: the final step of onboarding, after a user had already crossed the highest-friction barrier on the platform.
 
+## Strategic frame
+
+**Strategy type:** Proactive
+**Sources of insight:** User Insight · Data Insight
+
+A **proactive** bet driven by user + data insight. The data showed peak application intent at the **end of onboarding** (right after KYC and funding); user research confirmed surfacing the card there felt like a finishing gift, not an interruption.
+
 ## The problem
 
 Gemini's crypto rewards credit card was a strong product on paper: real cashback, clear retention value, a natural fit for the existing user base. It was also invisible. Roughly **1,000** users had it.
@@ -512,6 +526,13 @@ Strategically, this rewrote the role of onboarding at Gemini. It stopped being a
 ## Headline
 
 Built the foundational referral system during crypto winter (late 2023) when paid acquisition collapsed. **$35M+ in directly attributed revenue** since inception. Multi-surface: exchange + credit card. **Best flat payout referral offer in the industry** at $50 standard.
+
+## Strategic frame
+
+**Strategy type:** Reactive
+**Sources of insight:** Strategic Insight · Data Insight
+
+A **reactive** bet. With paid acquisition collapsing in crypto winter (CPMs rising, ROAS falling — data signal), used **product-led growth** as the strategic lever to keep the user base growing through the downturn.
 
 ## The gap — late 2023
 
@@ -609,6 +630,13 @@ The credit card extension was the proof: the system was **infrastructure, not a 
 ## Headline
 
 Killed a **$500K Optimizely contract** — a quarter of total IT budget — with an in-house **API-first** platform that did what the vendor structurally couldn't: connect experiments directly to our data lake. **10× experiment velocity** (1–2 per month → tens per month). Pays for itself on maintenance and infra alone, every year.
+
+## Strategic frame
+
+**Strategy type:** Proactive
+**Sources of insight:** Strategic Insight · Data Insight
+
+A **proactive** cost-cutting bet on a **$500K** under-utilized vendor (data signal), backed by the strategic insight that connecting experiments to **customer-360 data** would unlock the value Optimizely structurally couldn't deliver.
 
 ## The gap
 

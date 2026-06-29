@@ -10,6 +10,13 @@
 
 Grew Gemini's credit card holders from **~1,000 to ~30,000** — a **30× lift**. Not by changing the product, but by moving the cross-sell to **peak intent**: the final step of onboarding, after a user had already crossed the highest-friction barrier on the platform.
 
+## Strategic frame
+
+**Strategy type:** Proactive
+**Sources of insight:** User Insight · Data Insight
+
+A **proactive** bet driven by user + data insight. The data showed peak application intent at the **end of onboarding** (right after KYC and funding); user research confirmed surfacing the card there felt like a finishing gift, not an interruption.
+
 ## The problem
 
 Gemini's crypto rewards credit card was a strong product on paper: real cashback, clear retention value, a natural fit for the existing user base. It was also invisible. Roughly **1,000** users had it.

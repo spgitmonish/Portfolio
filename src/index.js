@@ -60,6 +60,7 @@ CASE STUDIES (in order on the portfolio)
 - Page: /growth-org
 
 02 · RECURRING BUY (Gemini, 2025)
+- STRATEGIC FRAME: Proactive bet. Sources of insight = Strategic + Data. Identified a gap in recurring-revenue-generating users through cohort data, with the strategic opportunity to move the company KPI (MTU).
 - Education-first growth experience that moved recurring-buy adoption from 0.2% to 10% of MTUs (50× lift in rate).
 - 600 → 33,000 users on recurring buy (55× lift in absolute users).
 - Diagnosed 3 root causes, fixed all 3:
@@ -77,6 +78,7 @@ CASE STUDIES (in order on the portfolio)
 - Pages: /recurring-buy (main) and /recurring-buy/roi (ROI deep dive)
 
 03 · CREDIT CARD CROSS-SELL (Gemini, 2024)
+- STRATEGIC FRAME: Proactive bet. Sources of insight = User + Data. The data showed peak application intent at the end of onboarding (right after KYC and funding); user research confirmed the card surfaced there felt like a finishing gift, not an interruption.
 - Distribution problem, not a product problem. Moved cross-sell to peak intent: final step of onboarding after KYC and funding.
 - 1,000 → 30,000 card holders (30× growth).
 - Reframed onboarding from setup task to multi-product adoption moment.
@@ -84,6 +86,7 @@ CASE STUDIES (in order on the portfolio)
 - Page: /credit-card
 
 04 · REFERRALS (Gemini, 2023 → ongoing)
+- STRATEGIC FRAME: Reactive bet. Sources of insight = Strategic + Data. With paid acquisition collapsing in crypto winter (CPMs rising, ROAS falling — data signal), used product-led growth as the strategic lever to keep the user base growing through the downturn.
 - Built the foundational referral system in the trough of crypto winter (Q4 2023) when paid acquisition stopped working.
 - Multi-surface: exchange + credit card.
 - Standard reward: $50 (best flat payout in industry).
@@ -98,6 +101,7 @@ CASE STUDIES (in order on the portfolio)
 - Page: /referrals
 
 05 · EXPERIMENTATION PLATFORM (Gemini, 2022)
+- STRATEGIC FRAME: Proactive bet. Sources of insight = Strategic + Data. Cost-cutting opportunity on a $500K under-utilized vendor (data signal), backed by the strategic insight that connecting experiments to customer-360 data would unlock the value Optimizely structurally couldn't deliver.
 - Killed a $500K Optimizely contract (a quarter of total IT budget) with an in-house API-first platform.
 - Built with 4 people (Lead PM + 3 eng), no scope creep, 6 months.
 - 4 API domains: features, experiments, attributes, audiences.

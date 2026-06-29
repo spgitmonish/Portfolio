@@ -11,6 +11,13 @@
 
 From **0.2% to 10% of MTUs** on a recurring buy — a **50× lift in adoption rate**. Recurring-buy users moved from **600 to 33,000** — a **55× lift in absolute users**. Education-first, ROI-positive by construction.
 
+## Strategic frame
+
+**Strategy type:** Proactive
+**Sources of insight:** Strategic Insight · Data Insight
+
+A **proactive** bet. Identified a gap in recurring-revenue-generating users through cohort data, with the strategic opportunity to move the company's north-star KPI: **Monthly Transacting Users**.
+
 ## The gap
 
 Gemini's north-star was Monthly Transacting Users (MTU). The team had been pushing on the top of the funnel for a year. Numbers crept up; the shape of the line stayed the same.
